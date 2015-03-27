@@ -1,0 +1,72 @@
+﻿==========================================================================================================================================
+[PROJETO UNIVERSIDADE SIMPLES] Release Notes - 21-10-2014
+==========================================================================================================================================
+
+LISTA DE FUNCIONALIDADE DA RELEASE
+------------------------------------------------------------------------------------------------------------------------------------------
+Inserir Aluno
+Listar Alunos
+Buscar Aluno
+Remover Aluno
+
+Alterar Aluno
+-Alterar Nome
+-Alterar Matrícula
+-Alterar Curso
+
+Ver Quantidade de Alunos Cadastrados
+
+
+ARTEFATOS GERADOS
+------------------------------------------------------------------------------------------------------------------------------------------
+- Diagrama de Classes
+- JavaDocs
+
+Todos podem ser acessados a partir de 
+https://svn.code.sf.net/p/puniversidadesimples/code/PUniversidadeSimples/docs/
+
+PROCEDIMENTOS PARA BAIXAR O PROJETO
+------------------------------------------------------------------------------------------------------------------------------------------
+1. Projeto validado para o Eclipse Java EE IDE - Versão Juno e plugin subclipse instalado e configurado no Eclipse 
+2. Menu File -> New -> Other
+3. Selecione o wizard SVN -> Checkout Projects from SVN
+4. Select/Create location -> Create a new repository location
+5. Preencha com a url https://svn.code.sf.net/p/puniversidadesimples/code/
+6. Selecione o projeto PUniversidadeSimples.
+
+
+PROCEDIMENTOS PARA IMPORTAR DA BASE DE DADOS
+------------------------------------------------------------------------------------------------------------------------------------------
+1. Navegue até a pasta script, localizada na da pasta docs, e abra o arquivo sistemaEscolar.sql utilizando alguma ferramente de manipulação
+   de banco de dados. Ex: HeidiSQL ou MySQL Workbench. Nesse processo, utilizamos a ferramenta HeidiSQL.
+   Obs.: Esse arquivo com extensão sql contém todos os comandos necessários para geração da estrutura do banco de dados sistemaEscolar.
+2. Clique com o botão direito do mouse na aréa de texto (área que contém os comandos SQL) e clique em Executar.
+3. O banco será gerado, comtendo 4 tabelas.
+
+
+PROCEDIMENTOS PARA INTEGRAR O APLIAÇÃO Á BASE DE DADOS. 
+------------------------------------------------------------------------------------------------------------------------------------------
+1. Após o download, verifique se o projeto apresenta algum ícone de erro. O erro acontece devido o referenciamento de um endereço inválido 
+   do conector Mysql.
+2. Em caso de erro, execute o procedimento de integração partir do passo 2.1. Se não houver erros, siga para o passo 3.
+	2.1 Clique com o botão direito do mouse sobre projeto e vá para Properties.
+	2.2 Um nova janela aparecerá. Escolha Java Build Path, no menu à esquerda.
+	2.3 Clique na aba Libraries e selecione o conector Mysql. Clique em Remove, situado no menu à esquerda.
+	2.4 Clique em Add External JARs... e navegue até a pasta lib do projeto. É onde o conector estará.
+	2.5 Clique em OK. O ícone de erro deve desaparecer.
+3. Vá até o pacote org.ufpi.es.sistema.util e abra a classe ConnectionManager.
+4. Encontre o método openConnection e troque os valores das variáveis user e pwd, colocando o usuário e senha de acesso do seu gerenciador de
+   banco de dados, respectivamente.
+
+
+PROCEDIMENTO PARA EXECUTAR A APLICAÇÃO USANDO A IDE
+------------------------------------------------------------------------------------------------------------------------------------------
+1. Escolha o tipo de repositório (banco de dados, lista, arquivo e etc...) indo no construtor da classe Fachada, localizada no pacote
+   org.ufpi.es.controle.
+2. Vá ao pacote org.ufpi.es.visao e abra a classe TelaPrincipalConsole.
+3. Clique com o botão direito do mouse, selecione opção Run As e ecolha a opção Java Application.
+4. Um menu vai aparecer. Digite um número correpodente a cada operação. 
+
+
+[PROJETO UNIVERSIADE SIMPLES] Release Notes - 21-10-2014
+==========================================================================================================================================

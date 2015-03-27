@@ -1,0 +1,8 @@
+
+1) Inserir (Aluno, Professor, Turma)
+2) Buscar (Aluno, Professor, Turma)
+3) Verificar (Aluno, Professor, Turma)
+4) Alterar (Aluno, Professor, Turma)
+5) Remover (Aluno, Professor, Turma)
+6) Listar (Aluno, Professor, Turma)
+7) Verificar Quantidade (Aluno, Professor, Turma)
