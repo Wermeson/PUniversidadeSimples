@@ -17,10 +17,11 @@ public interface IRepositorioAlunos {
 	public void insereAluno(Aluno aluno) throws Exception;
 	
 	/**
-	 * Dada a matricula retorna o aluno correspondente
-	 * @param matricula
+	 * Faz a busca de aluno por matricula
+	 * @param matricula tipo texto
 	 * @return Aluno
-	 * @throws SQLException 
+	 * @throws AlunoNaoExistenteException
+	 * @throws Exception
 	 */
 	public Aluno buscarAluno(String matricula) throws AlunoNaoExistenteException, Exception;
 	
@@ -28,14 +29,14 @@ public interface IRepositorioAlunos {
 	 * Checa se existe o aluno dada a matricula 
 	 * @param matricula
 	 * @return true se existe, false se nao existe
-	 * @throws SQLException 
+	 * @throws Exception 
 	 */
 	public boolean verificaExistenciaAluno(String matricula) throws Exception;
 	
 	/**
-	 * Altera um aluno. A opção do atributo a ser alterado, a matricula do aluno e a nova informação devem ser passadas
-	 * para o método.
-	 * As opções são: 
+	 * Altera um aluno. A opï¿½ï¿½o do atributo a ser alterado, a matricula do aluno e a nova informaï¿½ï¿½o devem ser passadas
+	 * para o mï¿½todo.
+	 * As opï¿½ï¿½es sï¿½o: 
 	 * 1 - Matricula
 	 * 2 - Nome
 	 * 3 - Curso.
@@ -44,25 +45,24 @@ public interface IRepositorioAlunos {
 	 * @throws Exception 
 	 */
 	public void alterarAluno(Aluno a) throws  Exception;
-//	public void alterarAluno(Aluno aluno) throws AlunoNaoExistenteException;
 	/**
-	 * Dada a matrícula remove o aluno do curso
+	 * Dada a matrï¿½cula remove o aluno do curso
 	 * @param matricula
-	 * @throws SQLException 
+	 * @throws Exception 
 	 */
 	public void removerAluno(String matricula) throws  AlunoNaoExistenteException, Exception;
 	
 	/**
 	 * Lista todos os alunos do repositorio de alunos
 	 * @return Lista de Alunos
-	 * @throws SQLException 
+	 * @throws Exception 
 	 */
 	public List<Aluno> listarAlunos() throws AlunosNaoCadastradosException, Exception;
 	
 	/**
 	 * Quantidade de alunos do repositorio
 	 * @return inteiro
-	 * @throws SQLException 
+	 * @throws Exception 
 	 */
 	public int quantidadeAlunos() throws Exception;
 

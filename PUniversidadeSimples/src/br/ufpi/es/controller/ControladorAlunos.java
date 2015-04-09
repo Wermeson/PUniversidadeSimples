@@ -53,9 +53,9 @@ public class ControladorAlunos {
 	}
 	
 	/**
-	 * Dado um aluno faz a atualizacao com os novos dados. Opção do dado campo a ser alterado, a matrícula do aluno e a nova 
-	 * informação.
-	 * As opções são: 
+	 * Dado um aluno faz a atualizacao com os novos dados. Opï¿½ï¿½o do dado campo a ser alterado, a matrï¿½cula do aluno e a nova 
+	 * informaï¿½ï¿½o.
+	 * As opï¿½ï¿½es sï¿½o: 
 	 * 1 - Matricula
 	 * 2 - Nome
 	 * 3 - Curso.
@@ -67,10 +67,6 @@ public class ControladorAlunos {
 		// TODO Auto-generated method stub
 		this.controleAlunos.alterarAluno(a);
 	}
-
-//	public void alterarAluno(Aluno aluno) throws AlunoNaoExistenteException{
-//		
-//	}
 
 	/**
 	 * Dada a matricula do aluno, faz a remocao.
@@ -111,7 +107,7 @@ public class ControladorAlunos {
 	}
 	
 	/**
-	 * Retorna a quantidade de aluno inseridos no repositório.
+	 * Retorna a quantidade de aluno inseridos no repositï¿½rio.
 	 * @return quantidadeAlunos.
 	 * @throws SQLException 
 	 */
