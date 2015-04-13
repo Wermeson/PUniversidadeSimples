@@ -1,4 +1,5 @@
-package br.ufpi.es.visao;
+package br.ufpi.es.view;
+
 //package org.ufpi.es.visao;
 //
 //
@@ -64,4 +65,4 @@ package br.ufpi.es.visao;
 //			}
 //		}
 //	}
-//}
+// }

@@ -7,32 +7,38 @@ import br.ufpi.es.model.Turma;
 import br.ufpi.es.system.exception.TurmaNaoExistenteException;
 import br.ufpi.es.system.exception.TurmasNaoCadastradasException;
 
-public class RepositorioListaTurmas implements IRepositorioTurmas{
+public class RepositorioListaTurmas implements IRepositorioTurmas {
 	private List<Turma> turmas;
-	
+
 	/**
-	 * Construtor padrï¿½o da classe Repositï¿½rioLista Turmas. Instancia a lista para armazenar as turmas.
+	 * Construtor padrão da classe RepositorioLista Turmas. Instancia a lista
+	 * para armazenar as turmas.
 	 */
-	public RepositorioListaTurmas(){
+	public RepositorioListaTurmas() {
 		this.turmas = new LinkedList<Turma>();
 	}
-	
+
 	/**
-	 * Mï¿½todo que insere uma determinada turma na lista.
-	 * @param turma.
+	 * Método que insere uma determinada turma na lista.
+	 * 
+	 * @param turma
+	 *            .
 	 */
-	public void insereTurma(Turma turma){
+	public void insereTurma(Turma turma) {
 		this.turmas.add(turma);
 	}
-	
+
 	/**
-	 * Mï¿½todo que busca uma turma na lista pela descriï¿½ï¿½o da disciplina.
-	 * @param disciplina.
+	 * Método que busca uma turma na lista pela descrição da disciplina.
+	 * 
+	 * @param disciplina
+	 *            .
 	 * @return turma.
 	 */
-	public Turma buscarTurma(String disciplina) throws TurmaNaoExistenteException{
-		for(Turma t : turmas){
-			if(t.getDisciplina().equals(disciplina)){
+	public Turma buscarTurma(String disciplina)
+			throws TurmaNaoExistenteException {
+		for (Turma t : turmas) {
+			if (t.getDisciplina().equals(disciplina)) {
 				return t;
 			}
 		}
@@ -40,75 +46,85 @@ public class RepositorioListaTurmas implements IRepositorioTurmas{
 	}
 
 	/**
-	 * Mï¿½todo que verifica se uma determinada turma estï¿½ na lista. A descriï¿½ï¿½o da disciplina deve ser passada como parï¿½metro da pesquisa.
-	 * @param disciplina.
-	 * @return true, caso exista; false, caso nï¿½o exista.
+	 * Método que verifica se uma determinada turma está na lista. A descrição
+	 * da disciplina deve ser passada como parâmetro da pesquisa.
+	 * 
+	 * @param disciplina
+	 *            .
+	 * @return true, caso exista; false, caso não exista.
 	 */
-	public boolean verificaExistenciaTurma(String disciplina){
-		for(Turma t : turmas){
-			if(t.getDisciplina().equals(disciplina)){
+	public boolean verificaExistenciaTurma(String disciplina) {
+		for (Turma t : turmas) {
+			if (t.getDisciplina().equals(disciplina)) {
 				return true;
 			}
 		}
 		return false;
 	}
-	
+
 	/**
-	 * Mï¿½todo que altera os dados de uma determinada turma. A opï¿½ï¿½o do atributo a ser alterado, 
-	 * a disciplina e a nova informaï¿½ï¿½o devem ser informados.
-	 * As opï¿½ï¿½es sï¿½o: 
-	 * 1 - Departamento.
-	 * 2 - Disciplina
-	 * 3 - Horï¿½rio
+	 * Método que altera os dados de uma determinada turma. A opção do atributo
+	 * a ser alterado, a disciplina e a nova informação devem ser informados. As
+	 * opções são: 1 - Departamento. 2 - Disciplina 3 - Horário
 	 * 
-	 * @param op, disciplina, info.
-	 * @throws RepositorioException, TurmaNaoExistenteException
+	 * @param op
+	 *            , disciplina, info.
+	 * @throws RepositorioException
+	 *             , TurmaNaoExistenteException
 	 */
-	public void alterarTurma(int op, String disciplina, String info) throws TurmaNaoExistenteException{
+	public void alterarTurma(int op, String disciplina, String info)
+			throws TurmaNaoExistenteException {
 		Turma a = this.buscarTurma(disciplina);
-		
-		switch(op){
-			case 1: //Departamento.
-				a.setDepartamento(info);
-				break;
-			case 2: //Disciplina
-				a.setDisciplina(info);
-				break;
-			case 3:  //Horï¿½rio
-				a.setCargaHoraria(Integer.parseInt(info));
-				break;
+
+		switch (op) {
+		case 1: // Departamento.
+			a.setDepartamento(info);
+			break;
+		case 2: // Disciplina
+			a.setDisciplina(info);
+			break;
+		case 3: // Horário
+			a.setCargaHoraria(Integer.parseInt(info));
+			break;
 		}
 	}
-	
+
 	/**
 	 * Dada a disciplina, remove a turma correspondente.
-	 * @param discplina.
-	 * @throws RepositorioException, TurmaNaoExistenteException.
+	 * 
+	 * @param discplina
+	 *            .
+	 * @throws RepositorioException
+	 *             , TurmaNaoExistenteException.
 	 */
-	public void removerTurma(String disciplina) throws TurmaNaoExistenteException{
+	public void removerTurma(String disciplina)
+			throws TurmaNaoExistenteException {
 		Turma t = this.buscarTurma(disciplina);
 		this.turmas.remove(t);
 	}
-	
+
 	/**
-	 * Mï¿½todo que retorna todos a turmas inseridas na lista.
+	 * Método que retorna todos a turmas inseridas na lista.
+	 * 
 	 * @return Lista de turmas.
-	 * @throws RepositorioException, TurmasNaoCadastradasException
+	 * @throws RepositorioException
+	 *             , TurmasNaoCadastradasException
 	 */
 	@Override
-	public List<Turma> listarTurmas() throws TurmasNaoCadastradasException{
-		if(this.quantidadeTurmas() == 0){
+	public List<Turma> listarTurmas() throws TurmasNaoCadastradasException {
+		if (this.quantidadeTurmas() == 0) {
 			throw new TurmasNaoCadastradasException();
 		}
 		return (this.turmas);
 	}
-	
+
 	/**
-	 * Informa a quantidade de turmas que estï¿½o inseridas na lista.
+	 * Informa a quantidade de turmas que estão inseridas na lista.
+	 * 
 	 * @return turmas.size().
 	 */
 	@Override
-	public int quantidadeTurmas(){
+	public int quantidadeTurmas() {
 		return (this.turmas.size());
 	}
 }

@@ -12,7 +12,6 @@ import br.ufpi.es.system.util.ConnectionManager;
 
 /**
  * @author Jordao
- * Banco de dados para salvar os alunos.
  */
 public class RepositorioBancoAlunos implements IRepositorioAlunos {
 
@@ -22,7 +21,9 @@ public class RepositorioBancoAlunos implements IRepositorioAlunos {
 
 	/**
 	 * Método que insere um aluno no banco.
-	 * @param aluno.
+	 * 
+	 * @param aluno
+	 *            .
 	 */
 	@Override
 	public void insereAluno(Aluno aluno) throws SQLException {
@@ -42,6 +43,7 @@ public class RepositorioBancoAlunos implements IRepositorioAlunos {
 
 	/**
 	 * Método que busca um aluno no banco através de sua matrícula.
+	 * 
 	 * @param matricula
 	 * @return aluno
 	 */
@@ -70,9 +72,11 @@ public class RepositorioBancoAlunos implements IRepositorioAlunos {
 		statement.close();
 		return a;
 	}
-	
+
 	/**
-	 * Método que verifica a existência de um aluno no banco através de sua matrícula.
+	 * Método que verifica a existência de um aluno no banco através de sua
+	 * matrícula.
+	 * 
 	 * @param matricula
 	 * @return true se existir o aluno.
 	 * @return false se não existir.
@@ -108,7 +112,7 @@ public class RepositorioBancoAlunos implements IRepositorioAlunos {
 				|| (a.getCurso().charAt(0) == ' ')
 				|| (a.getCurso().length() == 0)
 				|| (a.getMatricula().length() == 0)) {
-			
+
 			statement.setString(1, null);
 			statement.setString(2, null);
 			statement.setString(3, null);
@@ -127,6 +131,7 @@ public class RepositorioBancoAlunos implements IRepositorioAlunos {
 
 	/**
 	 * Método que remove um aluno do banco de dados.
+	 * 
 	 * @param matricula
 	 */
 	@Override
@@ -149,6 +154,7 @@ public class RepositorioBancoAlunos implements IRepositorioAlunos {
 
 	/**
 	 * Método que retorna uma lista com todos os alunos cadastrados no banco.
+	 * 
 	 * @return alunos
 	 */
 	@Override
@@ -180,6 +186,7 @@ public class RepositorioBancoAlunos implements IRepositorioAlunos {
 
 	/**
 	 * Método que retorna a quantidade de alunos cadastrados no banco.
+	 * 
 	 * @return cont
 	 */
 	@Override

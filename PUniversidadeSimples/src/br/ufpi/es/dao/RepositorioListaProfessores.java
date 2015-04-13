@@ -7,105 +7,121 @@ import br.ufpi.es.model.Professor;
 import br.ufpi.es.system.exception.ProfessorNaoExistenteException;
 import br.ufpi.es.system.exception.ProfessoresNaoCadastradosException;
 
-public class RepositorioListaProfessores implements IRepositorioProfessores{
+public class RepositorioListaProfessores implements IRepositorioProfessores {
 	private List<Professor> professores;
-	
+
 	/**
-	 * Construtor do repositï¿½rio do tipo lista de professores. Intancia a lista para armazenar os professores.
+	 * Construtor do repositório do tipo lista de professores. Intancia a lista
+	 * para armazenar os professores.
 	 */
-	public RepositorioListaProfessores(){
-		this.professores = new LinkedList<Professor>();		
+	public RepositorioListaProfessores() {
+		this.professores = new LinkedList<Professor>();
 	}
-	
+
 	/**
-	 * Mï¿½todo que insere um determinado professor na lista de professores.
-	 * @param professor.
+	 * Método que insere um determinado professor na lista de professores.
+	 * 
+	 * @param professor
+	 *            .
 	 */
-	public void insereProfessor(Professor professor){
+	public void insereProfessor(Professor professor) {
 		this.professores.add(professor);
 	}
-	
+
 	/**
-	 * Mï¿½todo que busca um determinado professor na lista utilizando seu cpf como parï¿½metro da busca.
-	 * @param cpf.
+	 * Método que busca um determinado professor na lista utilizando seu cpf
+	 * como parâmetro da busca.
+	 * 
+	 * @param cpf
+	 *            .
 	 */
-	public Professor buscarProfessor(String cpf) throws ProfessorNaoExistenteException{
-		for(Professor p : this.professores){
-			if(p.getCpf().equals(cpf)){
+	public Professor buscarProfessor(String cpf)
+			throws ProfessorNaoExistenteException {
+		for (Professor p : this.professores) {
+			if (p.getCpf().equals(cpf)) {
 				return p;
 			}
 		}
 		throw new ProfessorNaoExistenteException();
 	}
-	
+
 	/**
-	 * Mï¿½todo que verifica se um determinado professor estï¿½ na lista de professor. CPF do professor ï¿½ usado como parï¿½metro da busca.
-	 * @param cpf.
-	 * @return true, se existe; false, se nï¿½o existe.
+	 * Método que verifica se um determinado professor está na lista de
+	 * professor. CPF do professor é usado como parâmetro da busca.
+	 * 
+	 * @param cpf
+	 *            .
+	 * @return true, se existe; false, se não existe.
 	 */
-	public boolean verificaExistenciaProfessor(String cpf){
-		for(Professor p : this.professores){
-			if(p.getCpf().equals(cpf)){
+	public boolean verificaExistenciaProfessor(String cpf) {
+		for (Professor p : this.professores) {
+			if (p.getCpf().equals(cpf)) {
 				return true;
 			}
 		}
 		return false;
 	}
-	
+
 	/**
-	 * Mï¿½todo que altera os dados de um determinado professor. A opï¿½ï¿½o do atributo a ser alterada, 
-	 * o cpf do professor e a nova informaï¿½ï¿½o devem ser informados.
-	 * As opï¿½ï¿½es sï¿½o: 
-	 * 1 - CPF
-	 * 2 - Nome
-	 * 3 - Titulo
-	 * 4 - Lotcaï¿½ï¿½o
-	 * @param op, cpf, info.
+	 * Método que altera os dados de um determinado professor. A opção do
+	 * atributo a ser alterada, o cpf do professor e a nova informação devem ser
+	 * informados. As opções são: 1 - CPF 2 - Nome 3 - Titulo 4 - Lotação
+	 * 
+	 * @param op
+	 *            , cpf, info.
 	 */
-	public void alterarProfessor(int op, String cpf, String info) throws ProfessorNaoExistenteException{
+	public void alterarProfessor(int op, String cpf, String info)
+			throws ProfessorNaoExistenteException {
 		Professor p = this.buscarProfessor(cpf);
-		
-		switch(op){
-			case 1: //CPF do professor.
-				p.setCpf(info);
-				break;
-			case 2: //Nome do professor
-				p.setNome(info);
-				break;
-			case 3: //Lotaï¿½ï¿½o
-				p.setLotacao(info);				
-				break;
-			case 4://Titulo do professor
-				p.setTitulo(info);
-				break;
+
+		switch (op) {
+		case 1: // CPF do professor.
+			p.setCpf(info);
+			break;
+		case 2: // Nome do professor
+			p.setNome(info);
+			break;
+		case 3: // Lotação
+			p.setLotacao(info);
+			break;
+		case 4:// Titulo do professor
+			p.setTitulo(info);
+			break;
 		}
 	}
-	
+
 	/**
-	 * Remove um determinado professor da lista. O cpf  do professor deve ser informado.
-	 * @param cpf.
+	 * Remove um determinado professor da lista. O cpf do professor deve ser
+	 * informado.
+	 * 
+	 * @param cpf
+	 *            .
 	 */
-	public void removerProfessor(String cpf) throws  ProfessorNaoExistenteException{
+	public void removerProfessor(String cpf)
+			throws ProfessorNaoExistenteException {
 		Professor p = this.buscarProfessor(cpf);
 		this.professores.remove(p);
 	}
-	
+
 	/**
-	 * Mï¿½todo que retorna todos os professores inseridos na lista.
+	 * Método que retorna todos os professores inseridos na lista.
+	 * 
 	 * @return professores.
 	 */
-	public List<Professor> listarProfessores() throws ProfessoresNaoCadastradosException{
-		if(this.quantidadeProfessor() == 0){
+	public List<Professor> listarProfessores()
+			throws ProfessoresNaoCadastradosException {
+		if (this.quantidadeProfessor() == 0) {
 			throw new ProfessoresNaoCadastradosException();
 		}
 		return (this.professores);
 	}
-	
+
 	/**
-	 * Informa a quantidade de professores que estï¿½o inseridos na lista.
+	 * Informa a quantidade de professores que estão inseridos na lista.
+	 * 
 	 * @return professores.size().
 	 */
-	public int quantidadeProfessor(){
+	public int quantidadeProfessor() {
 		return this.professores.size();
 	}
 }
