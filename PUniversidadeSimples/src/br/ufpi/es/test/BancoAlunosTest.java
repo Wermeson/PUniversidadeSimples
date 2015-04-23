@@ -15,7 +15,7 @@ import br.ufpi.es.model.Aluno;
 import br.ufpi.es.system.exception.AlunoNaoExistenteException;
 import br.ufpi.es.system.exception.AlunosNaoCadastradosException;
 
-public class TesteBancoALunos {	
+public class BancoAlunosTest {	
 	/**================================ CRUD ALUNOS ================================ **/
 	
 	/**

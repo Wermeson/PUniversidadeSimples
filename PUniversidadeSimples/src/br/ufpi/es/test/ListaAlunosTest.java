@@ -26,7 +26,7 @@ import br.ufpi.es.system.exception.TurmaSemAlunoException;
 import br.ufpi.es.system.exception.TurmasNaoCadastradasException;
 import br.ufpi.es.system.exception.VerificarExistenciaAlunoListaException;
 
-public class TesteListaAlunos {
+public class ListaAlunosTest {
 	/**
 	 * ================================ CRUD ALUNOS
 	 * ================================
