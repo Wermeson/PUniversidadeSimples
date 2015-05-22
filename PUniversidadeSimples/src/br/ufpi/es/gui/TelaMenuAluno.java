@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -35,7 +37,6 @@ public class TelaMenuAluno extends JDialog {
 		setLocationRelativeTo(null);
 		setResizable(false);
 		
-		
 		setLayout(new BorderLayout());
 		
 		painelSuperior = new JPanel(new FlowLayout());
@@ -50,6 +51,12 @@ public class TelaMenuAluno extends JDialog {
 		
 		botaoInserir = new JButton("Inserir");
 		botaoInserir.setFont(new Font("sans-serif", Font.BOLD, 12));
+		botaoInserir.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new TelaInserirAluno();
+			}
+		});
 		
 		botaoListar = new JButton("Listar");
 		botaoListar.setFont(new Font("sans-serif", Font.BOLD, 12));
@@ -75,7 +82,6 @@ public class TelaMenuAluno extends JDialog {
 		
 		add(painelSuperior, BorderLayout.NORTH);
 		add(painelMenu, BorderLayout.CENTER);
-		
 		
 		setVisible(true);
 	}
