@@ -26,13 +26,19 @@ public class TelaPrincipalConsole {
 				TelaAluno telaAluno = new TelaAluno();
 				telaAluno.mostrarTela(opcao, s, fachada);
 				break;
-
+			case 2:
+				TelaProfessor telaProfessor = new TelaProfessor();
+				telaProfessor.mostrarTela(opcao, s, fachada);
+				break;
+			case 3:
+				TelaTurma telaTurma = new TelaTurma();
+				telaTurma.mostrarTela(opcao, s, fachada);
+				break;
 			default:
 				System.out.println("Opção inválida! Tente novamente!");
 				break;
 			}
 		}
-
 	}
 
 }

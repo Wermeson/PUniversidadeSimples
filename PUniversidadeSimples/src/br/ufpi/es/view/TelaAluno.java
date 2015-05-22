@@ -75,7 +75,6 @@ public class TelaAluno {
 							+ a3.getMatricula() + "\nCurso:" + a3.getCurso());
 					System.out.println("-----------------------------------");
 				} catch (Exception e) {
-					// TODO: handle exception
 					System.out.println(e.getMessage());
 				}
 				break;
@@ -86,7 +85,6 @@ public class TelaAluno {
 					fachada.removerAluno(matricula3);
 					System.out.println("Aluno removido com sucesso.");
 				} catch (Exception e) {
-					// TODO: handle exception
 					System.out.println(e.getMessage());
 				}
 				break;
@@ -150,10 +148,9 @@ public class TelaAluno {
 					int quant = fachada.quantidadeAlunos();
 					System.out.println("Quantidade de alunos: " + quant);
 				} catch (Exception e) {
-					// TODO: handle exception
 					System.out.println(e.getMessage());
 				}
-
+				break;
 			default:
 				System.out.println("Opção inválida! Tente novamente!");
 				break;

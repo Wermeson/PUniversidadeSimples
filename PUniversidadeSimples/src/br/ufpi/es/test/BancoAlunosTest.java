@@ -22,6 +22,7 @@ public class BancoAlunosTest {
 	 * Teste o método de cadastro de alunos.
 	 * @throws SQLException 
 	 */
+	@SuppressWarnings("unused")
 	@Test
 	public void addAluno() throws SQLException {
 		IFachada fachada = new Fachada();
