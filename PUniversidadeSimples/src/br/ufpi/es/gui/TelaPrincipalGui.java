@@ -54,24 +54,34 @@ public class TelaPrincipalGui extends JFrame {
 		
 		iconeAluno = new ImageIcon(getClass().getResource("/icons/student.png"));
 		botaoAluno = new JButton("Aluno");
+		botaoAluno.setFont(new Font("sans-serif", Font.BOLD, 12));
 		botaoAluno.setVerticalTextPosition(SwingConstants.BOTTOM);
 		botaoAluno.setHorizontalTextPosition(SwingConstants.CENTER);
 		botaoAluno.setIcon(iconeAluno);
+		botaoAluno.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new TelaMenuAluno();
+			}
+		});
 		
 		iconeProfessor = new ImageIcon(getClass().getResource("/icons/professor.png"));
 		botaoProfessor = new JButton("Professor");
+		botaoProfessor.setFont(new Font("sans-serif", Font.BOLD, 12));
 		botaoProfessor.setVerticalTextPosition(SwingConstants.BOTTOM);
 		botaoProfessor.setHorizontalTextPosition(SwingConstants.CENTER);
 		botaoProfessor.setIcon(iconeProfessor);
 		
 		iconeTurma = new ImageIcon(getClass().getResource("/icons/classroom.png"));
 		botaoTurma = new JButton("Turma");
+		botaoTurma.setFont(new Font("sans-serif", Font.BOLD, 12));
 		botaoTurma.setVerticalTextPosition(SwingConstants.BOTTOM);
 		botaoTurma.setHorizontalTextPosition(SwingConstants.CENTER);
 		botaoTurma.setIcon(iconeTurma);
 		
 		iconeSair = new ImageIcon(getClass().getResource("/icons/exit.png"));
 		botaoSair = new JButton("Sair");
+		botaoSair.setFont(new Font("sans-serif", Font.BOLD, 12));
 		botaoSair.setVerticalTextPosition(SwingConstants.BOTTOM);
 		botaoSair.setHorizontalTextPosition(SwingConstants.CENTER);
 		botaoSair.setIcon(iconeSair);
