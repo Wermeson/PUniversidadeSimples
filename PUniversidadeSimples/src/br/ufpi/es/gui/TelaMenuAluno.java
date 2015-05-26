@@ -75,6 +75,13 @@ public class TelaMenuAluno extends JDialog {
 		
 		botaoRemover = new JButton("Remover");
 		botaoRemover.setFont(new Font("sans-serif", Font.BOLD, 12));
+		// Adiciona o listener do botão "Remover"
+		botaoRemover.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new TelaRemoverAluno();
+			}
+		});
 		
 		botaoAlterar = new JButton("Alterar");
 		botaoAlterar.setFont(new Font("sans-serif", Font.BOLD, 12));

@@ -2,7 +2,6 @@ package br.ufpi.es.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -110,7 +109,7 @@ public class TelaInserirAluno extends JDialog {
 		botaoInserir = new JButton("Inserir");
 		botaoInserir.setFont(new Font("sans-serif", Font.BOLD, 13));
 		
-		// Adiciona listener do botão "limpar"
+		// Adiciona listener do botão "Inserir"
 		botaoInserir.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -118,6 +117,13 @@ public class TelaInserirAluno extends JDialog {
 					Aluno aluno = new Aluno(txtMatricula.getText(), txtNome.getText(), txtCurso.getText());
 					try {
 						fachada.inserirAluno(aluno);
+						
+						JOptionPane.showMessageDialog(
+								null,
+								"Aluno inserido com sucesso.",
+								"Aluno Inserido",
+								JOptionPane.INFORMATION_MESSAGE);
+						
 					} catch (Exception e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();

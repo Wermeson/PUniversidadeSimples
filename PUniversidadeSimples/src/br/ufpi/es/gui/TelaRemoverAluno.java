@@ -16,10 +16,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import br.ufpi.es.controller.Fachada;
-import br.ufpi.es.model.Aluno;
 import br.ufpi.es.system.exception.AlunoNaoExistenteException;
 
-public class TelaBuscarAluno extends JDialog {
+public class TelaRemoverAluno extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -33,25 +32,19 @@ public class TelaBuscarAluno extends JDialog {
 	
 	// Labels dos campos
 	private JPanel painelEsquerda;
-	private JLabel labelMatriculaBusca;
-	private JLabel labelNome;
-	private JLabel labelMatricula;
-	private JLabel labelCurso;
+	private JLabel labelMatriculaRemover;
 	
 	// Campos de texto
 	private JPanel painelDireita;
-	private JPanel painelBusca;
-	private JTextField txtMatriculaBusca;
-	private JButton buttonBuscar;
-	private JTextField txtNome;
-	private JTextField txtMatricula;
-	private JTextField txtCurso;
-	
-	public TelaBuscarAluno() {
+	private JPanel painelRemover;
+	private JTextField txtMatriculaRemover;
+	private JButton buttonRemover;
+		
+	public TelaRemoverAluno() {
 		// Configurações do dialog
-		setTitle("Buscar Aluno");
+		setTitle("Remover Aluno");
 		setModal(true);
-		setSize(500, 250);
+		setSize(500, 125);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setResizable(false);
@@ -61,7 +54,7 @@ public class TelaBuscarAluno extends JDialog {
 		// Insere os componentes no dialog
 		painelSuperior = new JPanel();
 		painelSuperior.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 0));
-		labelTitulo = new JLabel("Buscar Aluno");
+		labelTitulo = new JLabel("Remover Aluno");
 		labelTitulo.setFont(new Font("sans-serif", Font.BOLD, 16));
 		labelTitulo.setForeground(Color.BLUE);
 		painelSuperior.add(labelTitulo);
@@ -69,36 +62,24 @@ public class TelaBuscarAluno extends JDialog {
 		painelForm = new JPanel(new BorderLayout(10, 10));
 		painelForm.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		
-		painelEsquerda = new JPanel(new GridLayout(4, 1, 10, 10));
-		labelMatriculaBusca = new JLabel("Informe a matrícula do aluno:");
-		labelMatriculaBusca.setFont(new Font("sans-serif", Font.BOLD, 12));
-		labelNome = new JLabel("Nome:");
-		labelNome.setFont(new Font("sans-serif", Font.BOLD, 12));
-		labelMatricula = new JLabel("Matrícula:");
-		labelMatricula.setFont(new Font("sans-serif", Font.BOLD, 12));
-		labelCurso = new JLabel("Curso:");
-		labelCurso.setFont(new Font("sans-serif", Font.BOLD, 12));
-		painelEsquerda.add(labelMatriculaBusca);
-		painelEsquerda.add(labelNome);
-		painelEsquerda.add(labelMatricula);
-		painelEsquerda.add(labelCurso);
+		painelEsquerda = new JPanel(new GridLayout(1, 1, 10, 10));
+		labelMatriculaRemover = new JLabel("Informe a matrícula do aluno:");
+		labelMatriculaRemover.setFont(new Font("sans-serif", Font.BOLD, 12));
+		painelEsquerda.add(labelMatriculaRemover);
 		
-		painelDireita = new JPanel(new GridLayout(4, 1, 10, 10));
-		painelBusca = new JPanel(new BorderLayout(10, 0));
-		txtMatriculaBusca = new JTextField();
-		buttonBuscar = new JButton("Buscar");
-		buttonBuscar.setFont(new Font("sans-serif", Font.BOLD, 13));
-		// Adiciona o listener ao botão "Buscar"
-		buttonBuscar.addActionListener(new ActionListener() {
+		painelDireita = new JPanel(new GridLayout(1, 1, 10, 10));
+		painelRemover = new JPanel(new BorderLayout(10, 0));
+		txtMatriculaRemover = new JTextField();
+		buttonRemover = new JButton("Remover");
+		buttonRemover.setFont(new Font("sans-serif", Font.BOLD, 13));
+		// Adiciona o listener do botão "Remover"
+		buttonRemover.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String matricula = txtMatriculaBusca.getText();
-				if (matricula.compareTo("") != 0) { // verifica se o usuário preencheu a matrícula
+				String matricula = txtMatriculaRemover.getText();
+				if (matricula.compareTo("") != 0) {
 					try {
-						Aluno aluno = fachada.buscarAluno(matricula);
-						txtNome.setText(aluno.getNome());
-						txtMatricula.setText(aluno.getMatricula());
-						txtCurso.setText(aluno.getCurso());
+						fachada.removerAluno(matricula);
 					} catch (AlunoNaoExistenteException e1) {
 						JOptionPane.showMessageDialog(
 								null,
@@ -122,15 +103,10 @@ public class TelaBuscarAluno extends JDialog {
 			}
 		});
 		
-		painelBusca.add(txtMatriculaBusca, BorderLayout.CENTER);
-		painelBusca.add(buttonBuscar, BorderLayout.EAST);
-		txtNome = new JTextField();
-		txtMatricula = new JTextField();
-		txtCurso = new JTextField();
-		painelDireita.add(painelBusca);
-		painelDireita.add(txtNome);
-		painelDireita.add(txtMatricula);
-		painelDireita.add(txtCurso);
+		painelRemover.add(txtMatriculaRemover, BorderLayout.CENTER);
+		painelRemover.add(buttonRemover, BorderLayout.EAST);
+		
+		painelDireita.add(painelRemover);
 		
 		painelForm.add(painelEsquerda, BorderLayout.WEST);
 		painelForm.add(painelDireita, BorderLayout.CENTER);
