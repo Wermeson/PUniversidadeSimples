@@ -102,6 +102,12 @@ public class TelaMenuAluno extends JDialog {
 		
 		botaoQtdAlunos = new JButton("Quantidade de alunos");
 		botaoQtdAlunos.setFont(new Font("sans-serif", Font.BOLD, 12));
+		botaoQtdAlunos.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new TelaQtdAlunos();
+			}
+		});
 		
 		painelMenu.add(botaoInserir);
 		painelMenu.add(botaoListar);
