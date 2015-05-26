@@ -5,38 +5,54 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class TelaInserirAluno extends JDialog {
+import br.ufpi.es.controller.Fachada;
+import br.ufpi.es.model.Aluno;
 
+/**
+ * @author Neto Araújo
+ *
+ */
+public class TelaInserirAluno extends JDialog { 
 	private static final long serialVersionUID = 1L;
 	
+	private Fachada fachada = new Fachada();
+	
+	// Título do menu
 	private JPanel painelSuperior;
 	private JLabel labelTitulo;
 	
 	private JPanel painelForm;
 	
+	// Labels dos campos
 	private JPanel painelEsquerda;
 	private JLabel labelNome;
 	private JLabel labelMatricula;
 	private JLabel labelCurso;
 	
+	// Campos de texto
 	private JPanel painelDireita;
 	private JTextField txtNome;
 	private JTextField txtMatricula;
 	private JTextField txtCurso;
 	
+	// Botões
 	private JPanel painelInferior;
 	private JButton botaoLimpar;
 	private JButton botaoInserir;
 	
 	public TelaInserirAluno() {
+		// Configurações do dialog
 		setTitle("Inserir Aluno");
 		setModal(true);
 		setSize(500, 250);
@@ -44,8 +60,9 @@ public class TelaInserirAluno extends JDialog {
 		setLocationRelativeTo(null);
 		setResizable(false);
 		
-		setLayout(new BorderLayout());
+		setLayout(new BorderLayout()); // Altera gerenciador de layout padrão
 		
+		// Insere os componentes no dialog
 		painelSuperior = new JPanel();
 		painelSuperior.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 0));
 		labelTitulo = new JLabel("Inserir Aluno");
@@ -79,8 +96,63 @@ public class TelaInserirAluno extends JDialog {
 		painelInferior.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 0));
 		botaoLimpar = new JButton("Limpar");
 		botaoLimpar.setFont(new Font("sans-serif", Font.BOLD, 13));
+		
+		// Adiciona listener do botão "limpar"
+		botaoLimpar.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				txtNome.setText("");
+				txtMatricula.setText("");
+				txtCurso.setText("");
+			}
+		});
+		
 		botaoInserir = new JButton("Inserir");
 		botaoInserir.setFont(new Font("sans-serif", Font.BOLD, 13));
+		
+		// Adiciona listener do botão "limpar"
+		botaoInserir.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (isDadosValidos()) {
+					Aluno aluno = new Aluno(txtMatricula.getText(), txtNome.getText(), txtCurso.getText());
+					try {
+						fachada.inserirAluno(aluno);
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+			}
+			
+			
+			/**
+			 * Valida o formulário
+			 * @return true se os dados do formulário forem válidos. false caso contrário.
+			 */
+			public boolean isDadosValidos() {
+				boolean dadosValidos = true;
+				String erro = "Os seguintes campos apresentam erros:\n";
+				
+				if (txtNome.getText().compareTo("") == 0) {
+					erro += "- Nome.\n";
+					dadosValidos = false;
+				}
+				if (txtMatricula.getText().compareTo("") == 0) {
+					erro += "- Matrícula.\n";
+					dadosValidos = false;
+				}
+				if (txtCurso.getText().compareTo("") == 0) {
+					erro += "- Curso.\n";
+					dadosValidos = false;
+				}
+				
+				JOptionPane.showMessageDialog(null, erro, "Dados Inválidos", JOptionPane.ERROR_MESSAGE);
+				
+				return dadosValidos;
+			}
+		});
+		
 		painelInferior.add(botaoLimpar);
 		painelInferior.add(botaoInserir);
 		
@@ -91,7 +163,7 @@ public class TelaInserirAluno extends JDialog {
 		add(painelForm, BorderLayout.CENTER);
 		add(painelInferior, BorderLayout.SOUTH);
 		
-		setVisible(true);
+		setVisible(true); // Exibe o dialog
 	}
 
 }

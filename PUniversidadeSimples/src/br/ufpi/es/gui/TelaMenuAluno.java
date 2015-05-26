@@ -30,15 +30,16 @@ public class TelaMenuAluno extends JDialog {
 	private JButton botaoQtdAlunos;
 	
 	public TelaMenuAluno() {
+		// configurações do dialog
 		setTitle("Menu Aluno");
 		setModal(true);
 		setSize(400, 300);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setLocationRelativeTo(null);
 		setResizable(false);
 		
-		setLayout(new BorderLayout());
+		setLayout(new BorderLayout()); // Altera gerenciador de layout padrão
 		
+		// Insere os componentes no dialog
 		painelSuperior = new JPanel(new FlowLayout());
 		painelSuperior.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 0));
 		labelMenu = new JLabel("Menu Aluno");
@@ -51,10 +52,12 @@ public class TelaMenuAluno extends JDialog {
 		
 		botaoInserir = new JButton("Inserir");
 		botaoInserir.setFont(new Font("sans-serif", Font.BOLD, 12));
+
+		// Adiciona o listener do botão "Inserir"
 		botaoInserir.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaInserirAluno();
+				new TelaInserirAluno(); // Exibe a tela Inserir Aluno
 			}
 		});
 		

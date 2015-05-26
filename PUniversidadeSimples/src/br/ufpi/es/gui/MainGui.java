@@ -8,7 +8,7 @@ public class MainGui {
 		TelaPrincipalGui tp = new TelaPrincipalGui();
 		tp.setSize(400, 350);
 		tp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		tp.setLocationRelativeTo(null);
+		//tp.setLocationRelativeTo(null);
 		tp.setResizable(false);
 		tp.setVisible(true);
 	}
