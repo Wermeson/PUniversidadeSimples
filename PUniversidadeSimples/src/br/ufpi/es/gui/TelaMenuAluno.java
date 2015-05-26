@@ -92,6 +92,13 @@ public class TelaMenuAluno extends JDialog {
 		
 		botaoAlterar = new JButton("Alterar");
 		botaoAlterar.setFont(new Font("sans-serif", Font.BOLD, 12));
+		// Adiciona o listener do botão "Alterar"
+		botaoAlterar.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new TelaAlterarAluno(); // Exibe a tela Alterar Aluno
+			}
+		});
 		
 		botaoQtdAlunos = new JButton("Quantidade de alunos");
 		botaoQtdAlunos.setFont(new Font("sans-serif", Font.BOLD, 12));
