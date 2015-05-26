@@ -62,6 +62,13 @@ public class TelaMenuAluno extends JDialog {
 		
 		botaoListar = new JButton("Listar");
 		botaoListar.setFont(new Font("sans-serif", Font.BOLD, 12));
+		// Adiciona o listener do botão "Listar"
+		botaoListar.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new TelaListarAlunos(); // Exibe a tela Listar Alunos
+			}
+		});
 		
 		botaoBuscar = new JButton("Buscar");
 		botaoBuscar.setFont(new Font("sans-serif", Font.BOLD, 12));
@@ -79,7 +86,7 @@ public class TelaMenuAluno extends JDialog {
 		botaoRemover.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaRemoverAluno();
+				new TelaRemoverAluno(); // Exibe a tela Remover Aluno
 			}
 		});
 		
