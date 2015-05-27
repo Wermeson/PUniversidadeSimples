@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
@@ -36,6 +37,9 @@ public class TelaPrincipalGui extends JFrame {
 	private Icon iconeTurma;
 	private Icon iconeSair;
 	
+	private JPanel painelInferior;
+	private JButton botaoSobre;
+	
 	public TelaPrincipalGui() {
 		super("Universidade Simples");
 		
@@ -57,6 +61,7 @@ public class TelaPrincipalGui extends JFrame {
 		botaoAluno.setVerticalTextPosition(SwingConstants.BOTTOM);
 		botaoAluno.setHorizontalTextPosition(SwingConstants.CENTER);
 		botaoAluno.setIcon(iconeAluno);
+		// Adiciona listener ao botao "Aluno"
 		botaoAluno.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -84,6 +89,7 @@ public class TelaPrincipalGui extends JFrame {
 		botaoSair.setVerticalTextPosition(SwingConstants.BOTTOM);
 		botaoSair.setHorizontalTextPosition(SwingConstants.CENTER);
 		botaoSair.setIcon(iconeSair);
+		// Adiciona listener ao botao "Sair"
 		botaoSair.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -96,8 +102,34 @@ public class TelaPrincipalGui extends JFrame {
 		painelMenu.add(botaoTurma);
 		painelMenu.add(botaoSair);
 		
+		painelInferior = new JPanel();
+		painelInferior.setBorder(BorderFactory.createEmptyBorder(0, 0, 5, 0));
+		botaoSobre = new JButton("Sobre");
+		botaoSobre.setFont(new Font("sans-serif", Font.BOLD, 12));
+		// Adiciona listener ao botao "Sobre"
+		botaoSobre.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String mensagem = "";
+				mensagem += "Colaboradores:\n\n";
+				mensagem += "Armando Soares\n";
+				mensagem += "Francisco Neto\n";
+				mensagem += "Francisco Wermeson\n";
+				mensagem += "Francisco Wender\n";
+				mensagem += "Hugo Santos\n";
+				mensagem += "Alan Melão\n";
+				mensagem += "Saulo de Tarso\n";
+				mensagem += "Roney Lira\n";
+				mensagem += "Joselito Junior";
+				
+				JOptionPane.showMessageDialog(null, mensagem, "Sobre", JOptionPane.INFORMATION_MESSAGE);
+			}
+		});
+		painelInferior.add(botaoSobre);
+		
 		add(painelSuperior, BorderLayout.NORTH);
 		add(painelMenu, BorderLayout.CENTER);
+		add(painelInferior, BorderLayout.SOUTH);
 	}
 	
 	private void configuraNimbus() {
