@@ -2,7 +2,6 @@ package br.ufpi.es.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Font;
 
 import javax.swing.BorderFactory;
@@ -17,7 +16,7 @@ public class TelaQtdAlunos extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 
-	Fachada fachada;
+	private Fachada fachada = new Fachada();
 
 	// Título do menu
 	private JPanel painelSuperior;
@@ -27,8 +26,7 @@ public class TelaQtdAlunos extends JDialog {
 
 	private JLabel labelQtd;
 
-	public TelaQtdAlunos(Fachada f) {
-		this.fachada = f;
+	public TelaQtdAlunos() {
 		// Configurações do dialog
 		setTitle("Quantidade de Alunos");
 		setModal(true);

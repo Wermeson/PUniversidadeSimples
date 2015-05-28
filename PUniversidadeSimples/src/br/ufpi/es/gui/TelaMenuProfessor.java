@@ -76,7 +76,7 @@ public class TelaMenuProfessor extends JDialog {
 		botaoBuscar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaBuscarAluno(); // Exibe a tela Buscar Aluno
+				new TelaBuscarProfessor(); // Exibe a tela Buscar Professor
 			}
 		});
 		
