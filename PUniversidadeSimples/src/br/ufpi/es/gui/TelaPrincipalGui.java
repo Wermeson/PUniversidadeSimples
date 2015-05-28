@@ -19,6 +19,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
+import br.ufpi.es.controller.Fachada;
+
 public class TelaPrincipalGui extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -40,6 +42,7 @@ public class TelaPrincipalGui extends JFrame {
 	private JPanel painelInferior;
 	private JButton botaoSobre;
 	
+	Fachada fachada = new Fachada();
 	public TelaPrincipalGui() {
 		super("Universidade Simples");
 		
@@ -65,7 +68,7 @@ public class TelaPrincipalGui extends JFrame {
 		botaoAluno.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaMenuAluno();
+				new TelaMenuAluno(fachada);
 			}
 		});
 		
