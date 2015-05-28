@@ -141,21 +141,22 @@ public class TelaInserirAluno extends JDialog {
 				boolean dadosValidos = true;
 				String erro = "Os seguintes campos apresentam erros:\n";
 				
-				if (txtNome.getText().compareTo("") == 0) {
+				if (txtNome.getText().length() == 0) {
 					erro += "- Nome.\n";
 					dadosValidos = false;
 				}
-				if (txtMatricula.getText().compareTo("") == 0) {
+				if (txtMatricula.getText().length() == 0) {
 					erro += "- Matrícula.\n";
 					dadosValidos = false;
 				}
-				if (txtCurso.getText().compareTo("") == 0) {
+				if (txtCurso.getText().length() == 0) {
 					erro += "- Curso.\n";
 					dadosValidos = false;
 				}
 				
-				JOptionPane.showMessageDialog(null, erro, "Dados Inválidos", JOptionPane.ERROR_MESSAGE);
-				
+				if (!dadosValidos){
+					JOptionPane.showMessageDialog(null, erro, "Dados Inválidos", JOptionPane.ERROR_MESSAGE);
+				}
 				return dadosValidos;
 			}
 		});

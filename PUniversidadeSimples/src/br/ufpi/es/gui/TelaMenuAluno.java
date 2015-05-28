@@ -71,7 +71,7 @@ public class TelaMenuAluno extends JDialog {
 		botaoListar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaListarAlunos(); // Exibe a tela Listar Alunos
+				new TelaListarAlunos(fachada); // Exibe a tela Listar Alunos
 			}
 		});
 		
@@ -81,7 +81,7 @@ public class TelaMenuAluno extends JDialog {
 		botaoBuscar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaBuscarAluno(); // Exibe a tela Buscar Aluno
+				new TelaBuscarAluno(fachada); // Exibe a tela Buscar Aluno
 			}
 		});
 		
@@ -91,7 +91,7 @@ public class TelaMenuAluno extends JDialog {
 		botaoRemover.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaRemoverAluno(); // Exibe a tela Remover Aluno
+				new TelaRemoverAluno(fachada); // Exibe a tela Remover Aluno
 			}
 		});
 		
@@ -101,7 +101,7 @@ public class TelaMenuAluno extends JDialog {
 		botaoAlterar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaAlterarAluno(); // Exibe a tela Alterar Aluno
+				new TelaAlterarAluno(fachada); // Exibe a tela Alterar Aluno
 			}
 		});
 		
@@ -110,7 +110,7 @@ public class TelaMenuAluno extends JDialog {
 		botaoQtdAlunos.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaQtdAlunos();
+				new TelaQtdAlunos(fachada);
 			}
 		});
 		

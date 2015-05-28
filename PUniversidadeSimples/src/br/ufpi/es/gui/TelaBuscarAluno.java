@@ -23,7 +23,7 @@ public class TelaBuscarAluno extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 	
-	private Fachada fachada = new Fachada();
+	Fachada fachada;
 	
 	// Título do menu
 	private JPanel painelSuperior;
@@ -47,7 +47,8 @@ public class TelaBuscarAluno extends JDialog {
 	private JTextField txtMatricula;
 	private JTextField txtCurso;
 	
-	public TelaBuscarAluno() {
+	public TelaBuscarAluno(Fachada f) {
+		this.fachada = f;
 		// Configurações do dialog
 		setTitle("Buscar Aluno");
 		setModal(true);

@@ -22,7 +22,7 @@ public class TelaRemoverAluno extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 	
-	private Fachada fachada = new Fachada();
+	Fachada fachada;
 	
 	// Título do menu
 	private JPanel painelSuperior;
@@ -40,7 +40,8 @@ public class TelaRemoverAluno extends JDialog {
 	private JTextField txtMatriculaRemover;
 	private JButton buttonRemover;
 		
-	public TelaRemoverAluno() {
+	public TelaRemoverAluno(Fachada f) {
+		this.fachada = f;
 		// Configurações do dialog
 		setTitle("Remover Aluno");
 		setModal(true);
