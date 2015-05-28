@@ -75,6 +75,13 @@ public class TelaPrincipalGui extends JFrame {
 		botaoProfessor.setVerticalTextPosition(SwingConstants.BOTTOM);
 		botaoProfessor.setHorizontalTextPosition(SwingConstants.CENTER);
 		botaoProfessor.setIcon(iconeProfessor);
+		// Adiciona listener ao botao "Professor"
+		botaoProfessor.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new TelaMenuProfessor();
+			}
+		});
 		
 		iconeTurma = new ImageIcon(getClass().getResource("/icons/classroom.png"));
 		botaoTurma = new JButton("Turma");
@@ -102,8 +109,8 @@ public class TelaPrincipalGui extends JFrame {
 		painelMenu.add(botaoTurma);
 		painelMenu.add(botaoSair);
 		
-		painelInferior = new JPanel();
-		painelInferior.setBorder(BorderFactory.createEmptyBorder(0, 0, 5, 0));
+		painelInferior = new JPanel(new BorderLayout());
+		painelInferior.setBorder(BorderFactory.createEmptyBorder(0, 5, 5, 5));
 		botaoSobre = new JButton("Sobre");
 		botaoSobre.setFont(new Font("sans-serif", Font.BOLD, 12));
 		// Adiciona listener ao botao "Sobre"
@@ -114,12 +121,12 @@ public class TelaPrincipalGui extends JFrame {
 				mensagem += "Colaboradores:\n\n";
 				mensagem += "Armando Soares\n";
 				mensagem += "Francisco Neto\n";
-				mensagem += "Francisco Wermeson\n";
+				mensagem += "Francisco Wermerson\n";
 				mensagem += "Francisco Wender\n";
 				mensagem += "Hugo Santos\n";
-				mensagem += "Alan Melão\n";
 				mensagem += "Saulo de Tarso\n";
 				mensagem += "Roney Lira\n";
+				mensagem += "Alan Melão\n";
 				mensagem += "Joselito Junior";
 				
 				JOptionPane.showMessageDialog(null, mensagem, "Sobre", JOptionPane.INFORMATION_MESSAGE);
