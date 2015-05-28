@@ -14,6 +14,8 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import br.ufpi.es.controller.Fachada;
+
 public class TelaMenuAluno extends JDialog {
 
 	private static final long serialVersionUID = 1L;
@@ -29,7 +31,10 @@ public class TelaMenuAluno extends JDialog {
 	private JButton botaoAlterar;
 	private JButton botaoQtdAlunos;
 	
-	public TelaMenuAluno() {
+	Fachada fachada;
+	
+	public TelaMenuAluno(Fachada f) {
+		this.fachada = f;
 		// configurações do dialog
 		setTitle("Menu Aluno");
 		setModal(true);
@@ -56,7 +61,7 @@ public class TelaMenuAluno extends JDialog {
 		botaoInserir.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaInserirAluno(); // Exibe a tela Inserir Aluno
+				new TelaInserirAluno(fachada); // Exibe a tela Inserir Aluno
 			}
 		});
 		

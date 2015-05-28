@@ -25,7 +25,7 @@ import br.ufpi.es.model.Aluno;
 public class TelaInserirAluno extends JDialog { 
 	private static final long serialVersionUID = 1L;
 	
-	private Fachada fachada = new Fachada();
+	Fachada fachada;
 	
 	// Título do menu
 	private JPanel painelSuperior;
@@ -50,7 +50,8 @@ public class TelaInserirAluno extends JDialog {
 	private JButton botaoLimpar;
 	private JButton botaoInserir;
 	
-	public TelaInserirAluno() {
+	public TelaInserirAluno(Fachada f) {
+		this.fachada = f;
 		// Configurações do dialog
 		setTitle("Inserir Aluno");
 		setModal(true);
