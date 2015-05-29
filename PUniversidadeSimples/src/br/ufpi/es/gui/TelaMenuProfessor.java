@@ -92,7 +92,7 @@ public class TelaMenuProfessor extends JDialog {
 		botaoRemover.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaRemoverAluno(fachada); // Exibe a tela Remover Aluno
+				new TelaRemoverProfessor(fachada); // Exibe a tela Remover Aluno
 			}
 		});
 		

@@ -149,19 +149,19 @@ public class TelaInserirProfessor extends JDialog {
 				boolean dadosValidos = true;
 				String erro = "Os seguintes campos apresentam erros:\n";
 
-				if (txtCpf.getText().trim().compareTo("") == 0) {
+				if (txtCpf.getText().trim().length() == 0) {
 					erro += "- CPF.\n";
 					dadosValidos = false;
 				}
-				if (txtNome.getText().trim().compareTo("") == 0) {
+				if (txtNome.getText().trim().length() == 0) {
 					erro += "- Nome.\n";
 					dadosValidos = false;
 				}
-				if (txtLotacao.getText().trim().compareTo("") == 0) {
+				if (txtLotacao.getText().trim().length() == 0) {
 					erro += "- Lotação.\n";
 					dadosValidos = false;
 				}
-				if (txtTitulo.getText().trim().compareTo("") == 0) {
+				if (txtTitulo.getText().trim().length() == 0) {
 					erro += "- Título.\n";
 					dadosValidos = false;
 				}
