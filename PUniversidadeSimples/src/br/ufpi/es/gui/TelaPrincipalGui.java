@@ -22,6 +22,7 @@ import javax.swing.UIManager;
 import br.ufpi.es.controller.Fachada;
 import br.ufpi.es.gui.aluno.TelaMenuAluno;
 import br.ufpi.es.gui.professor.TelaMenuProfessor;
+import br.ufpi.es.gui.turma.TelaMenuTurma;
 
 public class TelaPrincipalGui extends JFrame {
 
@@ -97,6 +98,13 @@ public class TelaPrincipalGui extends JFrame {
 		botaoTurma.setVerticalTextPosition(SwingConstants.BOTTOM);
 		botaoTurma.setHorizontalTextPosition(SwingConstants.CENTER);
 		botaoTurma.setIcon(iconeTurma);
+		// Adiciona listener ao botao "Aluno"
+		botaoTurma.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new TelaMenuTurma(fachada);
+			}
+		});
 		
 		iconeSair = new ImageIcon(getClass().getResource("/icons/exit.png"));
 		botaoSair = new JButton("Sair");
