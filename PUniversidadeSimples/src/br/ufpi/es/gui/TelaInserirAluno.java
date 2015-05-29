@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 
 import br.ufpi.es.controller.Fachada;
 import br.ufpi.es.model.Aluno;
+import br.ufpi.es.model.Professor;
 
 /**
  * @author Neto Araújo
@@ -25,7 +26,7 @@ import br.ufpi.es.model.Aluno;
 public class TelaInserirAluno extends JDialog { 
 	private static final long serialVersionUID = 1L;
 	
-	Fachada fachada;
+	private Fachada fachada;
 	
 	// Título do menu
 	private JPanel painelSuperior;
@@ -51,7 +52,6 @@ public class TelaInserirAluno extends JDialog {
 	private JButton botaoInserir;
 	
 	public TelaInserirAluno(Fachada f) {
-		this.fachada = f;
 		// Configurações do dialog
 		setTitle("Inserir Aluno");
 		setModal(true);
@@ -61,6 +61,8 @@ public class TelaInserirAluno extends JDialog {
 		setResizable(false);
 		
 		setLayout(new BorderLayout()); // Altera gerenciador de layout padrão
+		
+		fachada = f;
 		
 		// Insere os componentes no dialog
 		painelSuperior = new JPanel();
@@ -132,7 +134,6 @@ public class TelaInserirAluno extends JDialog {
 				}
 			}
 			
-			
 			/**
 			 * Valida o formulário
 			 * @return true se os dados do formulário forem válidos. false caso contrário.
@@ -141,15 +142,15 @@ public class TelaInserirAluno extends JDialog {
 				boolean dadosValidos = true;
 				String erro = "Os seguintes campos apresentam erros:\n";
 				
-				if (txtNome.getText().length() == 0) {
+				if (txtNome.getText().trim().length() == 0) {
 					erro += "- Nome.\n";
 					dadosValidos = false;
 				}
-				if (txtMatricula.getText().length() == 0) {
+				if (txtMatricula.getText().trim().length() == 0) {
 					erro += "- Matrícula.\n";
 					dadosValidos = false;
 				}
-				if (txtCurso.getText().length() == 0) {
+				if (txtCurso.getText().trim().length() == 0) {
 					erro += "- Curso.\n";
 					dadosValidos = false;
 				}
@@ -175,3 +176,4 @@ public class TelaInserirAluno extends JDialog {
 	}
 
 }
+			

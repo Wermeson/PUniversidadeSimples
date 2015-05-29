@@ -31,10 +31,9 @@ public class TelaMenuAluno extends JDialog {
 	private JButton botaoAlterar;
 	private JButton botaoQtdAlunos;
 	
-	Fachada fachada;
+	private Fachada fachada;
 	
 	public TelaMenuAluno(Fachada f) {
-		this.fachada = f;
 		// configurações do dialog
 		setTitle("Menu Aluno");
 		setModal(true);
@@ -43,6 +42,8 @@ public class TelaMenuAluno extends JDialog {
 		setResizable(false);
 		
 		setLayout(new BorderLayout()); // Altera gerenciador de layout padrão
+		
+		fachada = f;
 		
 		// Insere os componentes no dialog
 		painelSuperior = new JPanel(new FlowLayout());

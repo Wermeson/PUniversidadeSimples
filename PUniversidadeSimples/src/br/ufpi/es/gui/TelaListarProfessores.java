@@ -21,7 +21,7 @@ public class TelaListarProfessores extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 
-	private Fachada fachada = new Fachada();
+	private Fachada fachada;
 
 	// Título do menu
 	private JPanel painelSuperior;
@@ -30,7 +30,7 @@ public class TelaListarProfessores extends JDialog {
 	private JPanel painelCentral;
 	private JTextArea txtProfessores;
 
-	public TelaListarProfessores() {
+	public TelaListarProfessores(Fachada f) {
 		// Configurações do dialog
 		setTitle("Listar Professores");
 		setModal(true);
@@ -41,6 +41,8 @@ public class TelaListarProfessores extends JDialog {
 
 		setLayout(new BorderLayout()); // Altera gerenciador de layout padrão
 
+		fachada = f;
+		
 		// Insere os componentes no dialog
 		painelSuperior = new JPanel();
 		painelSuperior.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 0));

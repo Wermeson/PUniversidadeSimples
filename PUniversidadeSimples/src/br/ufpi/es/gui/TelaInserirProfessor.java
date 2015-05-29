@@ -16,14 +16,13 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import br.ufpi.es.controller.Fachada;
-import br.ufpi.es.model.Aluno;
 import br.ufpi.es.model.Professor;
 
 public class TelaInserirProfessor extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 
-	private Fachada fachada = new Fachada();
+	private Fachada fachada;
 
 	// Título do menu
 	private JPanel painelSuperior;
@@ -50,7 +49,7 @@ public class TelaInserirProfessor extends JDialog {
 	private JButton botaoLimpar;
 	private JButton botaoInserir;
 
-	public TelaInserirProfessor() {
+	public TelaInserirProfessor(Fachada f) {
 		// Configurações do dialog
 		setTitle("Inserir Professor");
 		setModal(true);
@@ -60,7 +59,9 @@ public class TelaInserirProfessor extends JDialog {
 		setResizable(false);
 
 		setLayout(new BorderLayout()); // Altera gerenciador de layout padrão
-
+		
+		fachada = f;
+		
 		// Insere os componentes no dialog
 		painelSuperior = new JPanel();
 		painelSuperior.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 0));

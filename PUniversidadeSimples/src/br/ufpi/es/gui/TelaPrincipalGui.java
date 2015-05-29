@@ -42,9 +42,12 @@ public class TelaPrincipalGui extends JFrame {
 	private JPanel painelInferior;
 	private JButton botaoSobre;
 	
-	Fachada fachada = new Fachada();
+	private Fachada fachada;
+	
 	public TelaPrincipalGui() {
 		super("Universidade Simples");
+		
+		fachada = new Fachada();
 		
 		configuraNimbus();
 		
@@ -82,7 +85,7 @@ public class TelaPrincipalGui extends JFrame {
 		botaoProfessor.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaMenuProfessor();
+				new TelaMenuProfessor(fachada);
 			}
 		});
 		

@@ -24,7 +24,7 @@ public class TelaBuscarProfessor extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 
-	private Fachada fachada = new Fachada();
+	private Fachada fachada;
 
 	// Título do menu
 	private JPanel painelSuperior;
@@ -50,7 +50,7 @@ public class TelaBuscarProfessor extends JDialog {
 	private JTextField txtLotacao;
 	private JTextField txtTitulo;
 
-	public TelaBuscarProfessor() {
+	public TelaBuscarProfessor(Fachada f) {
 		// Configurações do dialog
 		setTitle("Buscar Professor");
 		setModal(true);
@@ -60,7 +60,9 @@ public class TelaBuscarProfessor extends JDialog {
 		setResizable(false);
 
 		setLayout(new BorderLayout()); // Altera gerenciador de layout padrão
-
+		
+		fachada = f;
+		
 		// Insere os componentes no dialog
 		painelSuperior = new JPanel();
 		painelSuperior.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 0));

@@ -23,7 +23,7 @@ public class TelaAlterarAluno extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 
-	Fachada fachada;
+	private Fachada fachada;
 
 	// Título do menu
 	private JPanel painelSuperior;
@@ -53,7 +53,6 @@ public class TelaAlterarAluno extends JDialog {
 	private JButton botaoAlterar;
 	
 	public TelaAlterarAluno(Fachada f) {
-		this.fachada = f;
 		// Configurações do dialog
 		setTitle("Alterar Aluno");
 		setModal(true);
@@ -63,7 +62,9 @@ public class TelaAlterarAluno extends JDialog {
 		setResizable(false);
 
 		setLayout(new BorderLayout()); // Altera gerenciador de layout padrão
-
+		
+		fachada = f;
+		
 		// Insere os componentes no dialog
 		painelSuperior = new JPanel();
 		painelSuperior.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 0));
@@ -184,22 +185,20 @@ public class TelaAlterarAluno extends JDialog {
 				boolean dadosValidos = true;
 				String erro = "Os seguintes campos apresentam erros:\n";
 				
-				if (txtNome.getText().length() == 0) {
+				if (txtNome.getText().compareTo("") == 0) {
 					erro += "- Nome.\n";
 					dadosValidos = false;
 				}
-				if (txtMatricula.getText().length() == 0) {
+				if (txtMatricula.getText().compareTo("") == 0) {
 					erro += "- Matrícula.\n";
 					dadosValidos = false;
 				}
-				if (txtCurso.getText().length() == 0) {
+				if (txtCurso.getText().compareTo("") == 0) {
 					erro += "- Curso.\n";
 					dadosValidos = false;
 				}
 				
-				if (!dadosValidos){
-					JOptionPane.showMessageDialog(null, erro, "Dados Inválidos", JOptionPane.ERROR_MESSAGE);
-				}
+				JOptionPane.showMessageDialog(null, erro, "Dados Inválidos", JOptionPane.ERROR_MESSAGE);
 				
 				return dadosValidos;
 			}
