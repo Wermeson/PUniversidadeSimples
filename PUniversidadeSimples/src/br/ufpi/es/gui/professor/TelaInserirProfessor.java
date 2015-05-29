@@ -1,4 +1,4 @@
-package br.ufpi.es.gui;
+package br.ufpi.es.gui.professor;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -59,9 +59,9 @@ public class TelaInserirProfessor extends JDialog {
 		setResizable(false);
 
 		setLayout(new BorderLayout()); // Altera gerenciador de layout padrão
-		
+
 		fachada = f;
-		
+
 		// Insere os componentes no dialog
 		painelSuperior = new JPanel();
 		painelSuperior.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 0));
@@ -131,10 +131,16 @@ public class TelaInserirProfessor extends JDialog {
 								"Professor inserido com sucesso.",
 								"Professor Inserido",
 								JOptionPane.INFORMATION_MESSAGE);
-
+						
+						txtCpf.setText("");
+						txtNome.setText("");
+						txtLotacao.setText("");
+						txtTitulo.setText("");
+						
 					} catch (Exception e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						JOptionPane.showMessageDialog(null, e1.getMessage(),
+								"Professor Não Inserido",
+								JOptionPane.ERROR_MESSAGE);
 					}
 				}
 			}

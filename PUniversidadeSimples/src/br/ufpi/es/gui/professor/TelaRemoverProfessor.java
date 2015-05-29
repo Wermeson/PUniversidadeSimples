@@ -1,4 +1,4 @@
-package br.ufpi.es.gui;
+package br.ufpi.es.gui.professor;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -16,106 +16,99 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import br.ufpi.es.controller.Fachada;
-import br.ufpi.es.system.exception.AlunoNaoExistenteException;
+import br.ufpi.es.system.exception.ProfessorNaoExistenteException;
 
-public class TelaRemoverAluno extends JDialog {
+public class TelaRemoverProfessor extends JDialog {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private Fachada fachada;
-	
+
 	// Título do menu
 	private JPanel painelSuperior;
 	private JLabel labelTitulo;
-	
+
 	private JPanel painelForm;
-	
+
 	// Labels dos campos
 	private JPanel painelEsquerda;
-	private JLabel labelMatriculaRemover;
-	
+	private JLabel labelCpfRemover;
+
 	// Campos de texto
 	private JPanel painelDireita;
 	private JPanel painelRemover;
-	private JTextField txtMatriculaRemover;
+	private JTextField txtCpfRemover;
 	private JButton buttonRemover;
-		
-	public TelaRemoverAluno(Fachada f) {
+
+	public TelaRemoverProfessor(Fachada f) {
 		// Configurações do dialog
-		setTitle("Remover Aluno");
+		setTitle("Remover Professor");
 		setModal(true);
 		setSize(500, 125);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setResizable(false);
-		
+
 		setLayout(new BorderLayout()); // Altera gerenciador de layout padrão
-		
+
 		fachada = f;
-		
+
 		// Insere os componentes no dialog
 		painelSuperior = new JPanel();
 		painelSuperior.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 0));
-		labelTitulo = new JLabel("Remover Aluno");
+		labelTitulo = new JLabel("Remover Professor");
 		labelTitulo.setFont(new Font("sans-serif", Font.BOLD, 16));
 		labelTitulo.setForeground(Color.BLUE);
 		painelSuperior.add(labelTitulo);
-		
+
 		painelForm = new JPanel(new BorderLayout(10, 10));
 		painelForm.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-		
+
 		painelEsquerda = new JPanel(new GridLayout(1, 1, 10, 10));
-		labelMatriculaRemover = new JLabel("Informe a matrícula do aluno:");
-		labelMatriculaRemover.setFont(new Font("sans-serif", Font.BOLD, 12));
-		painelEsquerda.add(labelMatriculaRemover);
-		
+		labelCpfRemover = new JLabel("Informe o CPF do professor:");
+		labelCpfRemover.setFont(new Font("sans-serif", Font.BOLD, 12));
+		painelEsquerda.add(labelCpfRemover);
+
 		painelDireita = new JPanel(new GridLayout(1, 1, 10, 10));
 		painelRemover = new JPanel(new BorderLayout(10, 0));
-		txtMatriculaRemover = new JTextField();
+		txtCpfRemover = new JTextField();
 		buttonRemover = new JButton("Remover");
 		buttonRemover.setFont(new Font("sans-serif", Font.BOLD, 13));
 		// Adiciona o listener do botão "Remover"
 		buttonRemover.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String matricula = txtMatriculaRemover.getText();
-				if (matricula.trim().length() != 0) {
+				String cpf = txtCpfRemover.getText();
+				if (cpf.trim().length() != 0) {
 					try {
-						fachada.removerAluno(matricula);
-					} catch (AlunoNaoExistenteException e1) {
-						JOptionPane.showMessageDialog(
-								null,
-								e1.getMessage() + ".",
-								"Aluno Não Existente",
+						fachada.removerProfessor(cpf);
+					} catch (ProfessorNaoExistenteException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage()
+								+ ".", "Professor Não Existente",
 								JOptionPane.INFORMATION_MESSAGE);
 					} catch (Exception e1) {
-						JOptionPane.showMessageDialog(
-								null,
-								e1.getMessage(),
-								"Erro",
-								JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, e1.getMessage(),
+								"Erro", JOptionPane.ERROR_MESSAGE);
 					}
 				} else {
-					JOptionPane.showMessageDialog(
-							null,
-							"Você deve informar a matrícula do aluno.",
-							"Campo obrigatório",
-							JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							"Você deve informar o CPF do professor.",
+							"Campo Obrigatório", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
-		
-		painelRemover.add(txtMatriculaRemover, BorderLayout.CENTER);
+
+		painelRemover.add(txtCpfRemover, BorderLayout.CENTER);
 		painelRemover.add(buttonRemover, BorderLayout.EAST);
-		
+
 		painelDireita.add(painelRemover);
-		
+
 		painelForm.add(painelEsquerda, BorderLayout.WEST);
 		painelForm.add(painelDireita, BorderLayout.CENTER);
-		
+
 		add(painelSuperior, BorderLayout.NORTH);
 		add(painelForm, BorderLayout.CENTER);
-		
+
 		setVisible(true);
 	}
 

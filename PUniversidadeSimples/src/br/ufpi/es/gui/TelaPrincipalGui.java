@@ -20,6 +20,8 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
 import br.ufpi.es.controller.Fachada;
+import br.ufpi.es.gui.aluno.TelaMenuAluno;
+import br.ufpi.es.gui.professor.TelaMenuProfessor;
 
 public class TelaPrincipalGui extends JFrame {
 
@@ -127,7 +129,7 @@ public class TelaPrincipalGui extends JFrame {
 				mensagem += "Colaboradores:\n\n";
 				mensagem += "Armando Soares\n";
 				mensagem += "Francisco Neto\n";
-				mensagem += "Francisco Wermerson\n";
+				mensagem += "Francisco Wermeson\n";
 				mensagem += "Francisco Wender\n";
 				mensagem += "Hugo Santos\n";
 				mensagem += "Saulo de Tarso\n";

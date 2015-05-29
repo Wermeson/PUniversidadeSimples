@@ -1,4 +1,4 @@
-package br.ufpi.es.gui;
+package br.ufpi.es.gui.aluno;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -127,9 +127,14 @@ public class TelaInserirAluno extends JDialog {
 								"Aluno Inserido",
 								JOptionPane.INFORMATION_MESSAGE);
 						
+						txtMatricula .setText("");
+						txtNome.setText("");
+						txtCurso.setText("");
+						
 					} catch (Exception e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						JOptionPane.showMessageDialog(null, e1.getMessage(),
+								"Aluno Não Inserido",
+								JOptionPane.ERROR_MESSAGE);
 					}
 				}
 			}

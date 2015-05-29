@@ -1,4 +1,4 @@
-package br.ufpi.es.gui;
+package br.ufpi.es.gui.professor;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 
 import br.ufpi.es.controller.Fachada;
 
-public class TelaQtdAlunos extends JDialog {
+public class TelaQtdProfessores extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 
@@ -26,9 +26,9 @@ public class TelaQtdAlunos extends JDialog {
 
 	private JLabel labelQtd;
 
-	public TelaQtdAlunos(Fachada f) {
+	public TelaQtdProfessores(Fachada f) {
 		// Configurações do dialog
-		setTitle("Quantidade de Alunos");
+		setTitle("Quantidade de Professores");
 		setModal(true);
 		setSize(500, 125);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -36,34 +36,33 @@ public class TelaQtdAlunos extends JDialog {
 		setResizable(false);
 
 		setLayout(new BorderLayout()); // Altera gerenciador de layout padrão
-		
+
 		fachada = f;
-		
+
 		// Insere os componentes no dialog
 		painelSuperior = new JPanel();
 		painelSuperior.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 0));
-		labelTitulo = new JLabel("Quantidade de Alunos");
+		labelTitulo = new JLabel("Quantidade de Professores");
 		labelTitulo.setFont(new Font("sans-serif", Font.BOLD, 16));
 		labelTitulo.setForeground(Color.BLUE);
 		painelSuperior.add(labelTitulo);
-		
+
 		painelForm = new JPanel();
-		
+
 		try {
-			int qtd = fachada.quantidadeAlunos(); // conculta a quantidade de
+			int qtd = fachada.quantidadeProfessores(); // conculta a quantidade de
 													// alunos
-			labelQtd = new JLabel("Quantidade de alunos: " + qtd);
+			labelQtd = new JLabel("Quantidade de professores: " + qtd);
 			labelQtd.setFont(new Font("sans-serif", Font.BOLD, 12));
 			painelForm.add(labelQtd);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Erro",
 					JOptionPane.ERROR_MESSAGE);
 		}
-		
+
 		add(painelSuperior, BorderLayout.NORTH);
 		add(painelForm, BorderLayout.CENTER);
-		
+
 		setVisible(true);
 	}
-
 }

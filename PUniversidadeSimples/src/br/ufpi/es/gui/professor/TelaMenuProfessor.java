@@ -1,4 +1,4 @@
-package br.ufpi.es.gui;
+package br.ufpi.es.gui.professor;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -16,28 +16,28 @@ import javax.swing.JPanel;
 
 import br.ufpi.es.controller.Fachada;
 
-public class TelaMenuAluno extends JDialog {
+public class TelaMenuProfessor extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 
 	private JPanel painelSuperior;
 	private JLabel labelMenu;
-	
+
 	private JPanel painelMenu;
 	private JButton botaoInserir;
 	private JButton botaoListar;
 	private JButton botaoBuscar;
 	private JButton botaoRemover;
 	private JButton botaoAlterar;
-	private JButton botaoQtdAlunos;
+	private JButton botaoQtdProfessor;
 	
 	private Fachada fachada;
-	
-	public TelaMenuAluno(Fachada f) {
+
+	public TelaMenuProfessor(Fachada f) {
 		// configurações do dialog
-		setTitle("Menu Aluno");
+		setTitle("Menu Professor");
 		setModal(true);
-		setSize(400, 300);
+		setSize(425, 300);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setResizable(false);
 		
@@ -48,7 +48,7 @@ public class TelaMenuAluno extends JDialog {
 		// Insere os componentes no dialog
 		painelSuperior = new JPanel(new FlowLayout());
 		painelSuperior.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 0));
-		labelMenu = new JLabel("Menu Aluno");
+		labelMenu = new JLabel("Menu Professor");
 		labelMenu.setFont(new Font("sans-serif", Font.BOLD, 16));
 		labelMenu.setForeground(Color.BLUE);
 		painelSuperior.add(labelMenu);
@@ -62,7 +62,7 @@ public class TelaMenuAluno extends JDialog {
 		botaoInserir.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaInserirAluno(fachada); // Exibe a tela Inserir Aluno
+				new TelaInserirProfessor(fachada); // Exibe a tela Inserir Aluno
 			}
 		});
 		
@@ -72,7 +72,7 @@ public class TelaMenuAluno extends JDialog {
 		botaoListar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaListarAlunos(fachada); // Exibe a tela Listar Alunos
+				new TelaListarProfessores(fachada); // Exibe a tela Listar Alunos
 			}
 		});
 		
@@ -82,7 +82,7 @@ public class TelaMenuAluno extends JDialog {
 		botaoBuscar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaBuscarAluno(fachada); // Exibe a tela Buscar Aluno
+				new TelaBuscarProfessor(fachada); // Exibe a tela Buscar Professor
 			}
 		});
 		
@@ -92,7 +92,7 @@ public class TelaMenuAluno extends JDialog {
 		botaoRemover.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaRemoverAluno(fachada); // Exibe a tela Remover Aluno
+				new TelaRemoverProfessor(fachada); // Exibe a tela Remover Aluno
 			}
 		});
 		
@@ -102,16 +102,16 @@ public class TelaMenuAluno extends JDialog {
 		botaoAlterar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaAlterarAluno(fachada); // Exibe a tela Alterar Aluno
+				new TelaAlterarProfessor(fachada); // Exibe a tela Alterar Aluno
 			}
 		});
 		
-		botaoQtdAlunos = new JButton("Quantidade de alunos");
-		botaoQtdAlunos.setFont(new Font("sans-serif", Font.BOLD, 12));
-		botaoQtdAlunos.addActionListener(new ActionListener() {
+		botaoQtdProfessor = new JButton("Quantidade de professores");
+		botaoQtdProfessor.setFont(new Font("sans-serif", Font.BOLD, 12));
+		botaoQtdProfessor.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaQtdAlunos(fachada);
+				new TelaQtdProfessores(fachada);
 			}
 		});
 		
@@ -120,12 +120,11 @@ public class TelaMenuAluno extends JDialog {
 		painelMenu.add(botaoBuscar);
 		painelMenu.add(botaoRemover);
 		painelMenu.add(botaoAlterar);
-		painelMenu.add(botaoQtdAlunos);
+		painelMenu.add(botaoQtdProfessor);
 		
 		add(painelSuperior, BorderLayout.NORTH);
 		add(painelMenu, BorderLayout.CENTER);
 		
 		setVisible(true);
 	}
-	
 }
