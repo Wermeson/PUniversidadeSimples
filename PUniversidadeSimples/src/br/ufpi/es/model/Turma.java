@@ -23,7 +23,7 @@ public class Turma {
 	}
 	
 	/*
-	 * Métodos de acesso aos atributos do objeto.
+	 * Metodos de acesso aos atributos do objeto.
 	 */
 	public String getDepartamento() {
 		return departamento;

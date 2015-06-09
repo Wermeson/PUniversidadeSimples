@@ -4,6 +4,6 @@ package br.ufpi.es.system.exception;
 public class TurmaNaoExistenteException extends Exception{
 	
 	public TurmaNaoExistenteException(){
-		super("Essa turma não existe!");
+		super("Essa turma nao existe!");
 	}
 }

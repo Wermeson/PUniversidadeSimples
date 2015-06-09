@@ -58,8 +58,8 @@ public class AlunosController {
 	}
 
 	/**
-	 * Dado um aluno faz a atualizacao com os novos dados. Opção do dado campo a
-	 * ser alterado, a matricula do aluno e a nova informação. As opções são: 1
+	 * Dado um aluno faz a atualizacao com os novos dados. Opcao do dado campo a
+	 * ser alterado, a matricula do aluno e a nova informacao. As opcoes sao: 1
 	 * - Matricula 2 - Nome 3 - Curso.
 	 * 
 	 * @param op
@@ -118,7 +118,7 @@ public class AlunosController {
 	}
 
 	/**
-	 * Retorna a quantidade de aluno inseridos no repositório.
+	 * Retorna a quantidade de aluno inseridos no repositorio.
 	 * 
 	 * @return quantidadeAlunos.
 	 * @throws SQLException

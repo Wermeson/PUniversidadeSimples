@@ -35,7 +35,7 @@ public class TelaPrincipalConsole {
 				telaTurma.mostrarTela(opcao, s, fachada);
 				break;
 			default:
-				System.out.println("Opção inválida! Tente novamente!");
+				System.out.println("Opcao invalida! Tente novamente!");
 				break;
 			}
 		}

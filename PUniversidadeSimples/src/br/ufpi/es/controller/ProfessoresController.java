@@ -53,7 +53,7 @@ public class ProfessoresController {
 	 * Dada o cpf do professor, checa se ele existe
 	 * 
 	 * @param cpf
-	 * @return true se existe; false se não existe.
+	 * @return true se existe; false se nao existe.
 	 * @throws RepositorioException
 	 */
 	public boolean verificaSeProfessorExiste(String cpf) {
@@ -61,9 +61,9 @@ public class ProfessoresController {
 	}
 
 	/**
-	 * Método que altera os dados de um determinado professor. A opção do
-	 * atributo a ser alterado, o cpf do professor e a nova informação devem ser
-	 * informados. As opções são: 1 - CPF 2 - Nome 3 - Titulo 4 - Lotcação
+	 * Metodo que altera os dados de um determinado professor. A opcao do
+	 * atributo a ser alterado, o cpf do professor e a nova informacao devem ser
+	 * informados. As opcoes sao: 1 - CPF 2 - Nome 3 - Titulo 4 - Lotcacao
 	 * 
 	 * @param op
 	 *            , cp, info.
@@ -130,7 +130,7 @@ public class ProfessoresController {
 	 */
 	public void associaProfessorTurma(Professor professor, Turma turma) {
 		professor.getTurma().add(turma); // Adiciona uma turma ao professor.
-		turma.setProfessor(professor); // relaciona o professo à turma.
+		turma.setProfessor(professor); // relaciona o professo ï¿½ turma.
 	}
 
 	/**
@@ -145,7 +145,7 @@ public class ProfessoresController {
 	}
 
 	/**
-	 * Retorna a quantidade de professores inseridos no repositório.
+	 * Retorna a quantidade de professores inseridos no repositorio.
 	 * 
 	 * @return quantidadeLivros.
 	 */

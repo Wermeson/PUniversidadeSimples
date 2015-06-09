@@ -11,7 +11,7 @@ public class RepositorioListaTurmas implements IRepositorioTurmas {
 	private List<Turma> turmas;
 
 	/**
-	 * Construtor padrão da classe RepositorioLista Turmas. Instancia a lista
+	 * Construtor padrï¿½o da classe RepositorioLista Turmas. Instancia a lista
 	 * para armazenar as turmas.
 	 */
 	public RepositorioListaTurmas() {
@@ -19,7 +19,7 @@ public class RepositorioListaTurmas implements IRepositorioTurmas {
 	}
 
 	/**
-	 * Método que insere uma determinada turma na lista.
+	 * Mï¿½todo que insere uma determinada turma na lista.
 	 * 
 	 * @param turma
 	 *            .
@@ -29,7 +29,7 @@ public class RepositorioListaTurmas implements IRepositorioTurmas {
 	}
 
 	/**
-	 * Método que busca uma turma na lista pela descrição da disciplina.
+	 * Mï¿½todo que busca uma turma na lista pela descriï¿½ï¿½o da disciplina.
 	 * 
 	 * @param disciplina
 	 *            .
@@ -46,12 +46,12 @@ public class RepositorioListaTurmas implements IRepositorioTurmas {
 	}
 
 	/**
-	 * Método que verifica se uma determinada turma está na lista. A descrição
-	 * da disciplina deve ser passada como parâmetro da pesquisa.
+	 * Mï¿½todo que verifica se uma determinada turma estï¿½ na lista. A descriï¿½ï¿½o
+	 * da disciplina deve ser passada como parï¿½metro da pesquisa.
 	 * 
 	 * @param disciplina
 	 *            .
-	 * @return true, caso exista; false, caso não exista.
+	 * @return true, caso exista; false, caso nï¿½o exista.
 	 */
 	public boolean verificaExistenciaTurma(String disciplina) {
 		for (Turma t : turmas) {
@@ -63,9 +63,9 @@ public class RepositorioListaTurmas implements IRepositorioTurmas {
 	}
 
 	/**
-	 * Método que altera os dados de uma determinada turma. A opção do atributo
-	 * a ser alterado, a disciplina e a nova informação devem ser informados. As
-	 * opções são: 1 - Departamento. 2 - Disciplina 3 - Horário
+	 * Metodo que altera os dados de uma determinada turma. A opcao do atributo
+	 * a ser alterado, a disciplina e a nova informacao devem ser informados. As
+	 * opcoes sao: 1 - Departamento. 2 - Disciplina 3 - Horario
 	 * 
 	 * @param op
 	 *            , disciplina, info.
@@ -83,7 +83,7 @@ public class RepositorioListaTurmas implements IRepositorioTurmas {
 		case 2: // Disciplina
 			a.setDisciplina(info);
 			break;
-		case 3: // Horário
+		case 3: // Horario
 			a.setCargaHoraria(Integer.parseInt(info));
 			break;
 		}
@@ -104,7 +104,7 @@ public class RepositorioListaTurmas implements IRepositorioTurmas {
 	}
 
 	/**
-	 * Método que retorna todos a turmas inseridas na lista.
+	 * Metodo que retorna todos a turmas inseridas na lista.
 	 * 
 	 * @return Lista de turmas.
 	 * @throws RepositorioException
@@ -119,7 +119,7 @@ public class RepositorioListaTurmas implements IRepositorioTurmas {
 	}
 
 	/**
-	 * Informa a quantidade de turmas que estão inseridas na lista.
+	 * Informa a quantidade de turmas que estao inseridas na lista.
 	 * 
 	 * @return turmas.size().
 	 */

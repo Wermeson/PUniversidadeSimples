@@ -11,7 +11,7 @@ public class RepositorioListaProfessores implements IRepositorioProfessores {
 	private List<Professor> professores;
 
 	/**
-	 * Construtor do repositório do tipo lista de professores. Intancia a lista
+	 * Construtor do repositorio do tipo lista de professores. Intancia a lista
 	 * para armazenar os professores.
 	 */
 	public RepositorioListaProfessores() {
@@ -19,7 +19,7 @@ public class RepositorioListaProfessores implements IRepositorioProfessores {
 	}
 
 	/**
-	 * Método que insere um determinado professor na lista de professores.
+	 * Metodo que insere um determinado professor na lista de professores.
 	 * 
 	 * @param professor
 	 *            .
@@ -29,8 +29,8 @@ public class RepositorioListaProfessores implements IRepositorioProfessores {
 	}
 
 	/**
-	 * Método que busca um determinado professor na lista utilizando seu cpf
-	 * como parâmetro da busca.
+	 * Metodo que busca um determinado professor na lista utilizando seu cpf
+	 * como parametro da busca.
 	 * 
 	 * @param cpf
 	 *            .
@@ -46,12 +46,12 @@ public class RepositorioListaProfessores implements IRepositorioProfessores {
 	}
 
 	/**
-	 * Método que verifica se um determinado professor está na lista de
-	 * professor. CPF do professor é usado como parâmetro da busca.
+	 * Metodo que verifica se um determinado professor esta na lista de
+	 * professor. CPF do professor e usado como parametro da busca.
 	 * 
 	 * @param cpf
 	 *            .
-	 * @return true, se existe; false, se não existe.
+	 * @return true, se existe; false, se nao existe.
 	 */
 	public boolean verificaExistenciaProfessor(String cpf) {
 		for (Professor p : this.professores) {
@@ -63,9 +63,9 @@ public class RepositorioListaProfessores implements IRepositorioProfessores {
 	}
 
 	/**
-	 * Método que altera os dados de um determinado professor. A opção do
-	 * atributo a ser alterada, o cpf do professor e a nova informação devem ser
-	 * informados. As opções são: 1 - CPF 2 - Nome 3 - Titulo 4 - Lotação
+	 * Metodo que altera os dados de um determinado professor. A opcao do
+	 * atributo a ser alterada, o cpf do professor e a nova informacao devem ser
+	 * informados. As opcoes sao: 1 - CPF 2 - Nome 3 - Titulo 4 - Lotacao
 	 * 
 	 * @param op
 	 *            , cpf, info.
@@ -81,7 +81,7 @@ public class RepositorioListaProfessores implements IRepositorioProfessores {
 		case 2: // Nome do professor
 			p.setNome(info);
 			break;
-		case 3: // Lotação
+		case 3: // Lotacao
 			p.setLotacao(info);
 			break;
 		case 4:// Titulo do professor
@@ -104,7 +104,7 @@ public class RepositorioListaProfessores implements IRepositorioProfessores {
 	}
 
 	/**
-	 * Método que retorna todos os professores inseridos na lista.
+	 * Metodo que retorna todos os professores inseridos na lista.
 	 * 
 	 * @return professores.
 	 */
@@ -117,7 +117,7 @@ public class RepositorioListaProfessores implements IRepositorioProfessores {
 	}
 
 	/**
-	 * Informa a quantidade de professores que estão inseridos na lista.
+	 * Informa a quantidade de professores que estao inseridos na lista.
 	 * 
 	 * @return professores.size().
 	 */

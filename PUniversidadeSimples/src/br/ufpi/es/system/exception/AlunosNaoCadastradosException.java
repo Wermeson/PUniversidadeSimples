@@ -4,6 +4,6 @@ package br.ufpi.es.system.exception;
 public class AlunosNaoCadastradosException extends Exception{
 	
 	public AlunosNaoCadastradosException(){
-		super("Nenhum aluno foi cadastrado no repositório.");
+		super("Nenhum aluno foi cadastrado no repositorio.");
 	}
 }

@@ -20,11 +20,11 @@ public class RepositorioListaAlunos implements IRepositorioAlunos {
 	 */
 	public RepositorioListaAlunos() {
 		this.alunos = new LinkedList<Aluno>();
-		System.out.println("Instância de lista");
+		System.out.println("Instancia de lista");
 	}
 
 	/**
-	 * Método que insere um determinado aluno na lista.
+	 * Metodo que insere um determinado aluno na lista.
 	 * 
 	 * @param aluno
 	 *            .
@@ -39,7 +39,7 @@ public class RepositorioListaAlunos implements IRepositorioAlunos {
 	}
 
 	/**
-	 * Método que busca um aluno na lista pela maticula. A matricula do aluno
+	 * Metodo que busca um aluno na lista pela maticula. A matricula do aluno
 	 * deve ser informada.
 	 * 
 	 * @param matricula
@@ -61,11 +61,10 @@ public class RepositorioListaAlunos implements IRepositorioAlunos {
 	}
 
 	/**
-	 * Método que verifica se um determinado aluno está na lista. A matricula do
-	 * aluno deve ser passada como parâmetro da pesquisa.
+	 * Metodo que verifica se um determinado aluno esta na lista. A matricula do
+	 * aluno deve ser passada como parametro da pesquisa.
 	 * 
 	 * @param matricula
-	 *            .
 	 * @return boolean
 	 * @throws VerificarExistenciaAlunoListaException
 	 */
@@ -84,12 +83,11 @@ public class RepositorioListaAlunos implements IRepositorioAlunos {
 	}
 
 	/**
-	 * Altera um aluno. A opção do atributo a ser alterado, a matricula do aluno
-	 * e a nova informação devem ser passadas para o método. As opções são: 1 -
+	 * Altera um aluno. A opcao do atributo a ser alterado, a matricula do aluno
+	 * e a nova informacao devem ser passadas para o metodo. As opcoes sao: 1 -
 	 * Matricula 2 - Nome 3 - Curso.
 	 * 
-	 * @param op
-	 *            , matricula, info.
+	 * @param op , matricula, info.
 	 * @throws BuscaListaException
 	 */
 	@Override
@@ -133,7 +131,7 @@ public class RepositorioListaAlunos implements IRepositorioAlunos {
 	}
 
 	/**
-	 * Método que retorna todos os alunos inseridos na lista.
+	 * Mï¿½todo que retorna todos os alunos inseridos na lista.
 	 * 
 	 * @return alunos.
 	 */
@@ -146,7 +144,7 @@ public class RepositorioListaAlunos implements IRepositorioAlunos {
 	}
 
 	/**
-	 * Informa a quantidade de alunos que estão inseridos na lista.
+	 * Informa a quantidade de alunos que estao inseridos na lista.
 	 * 
 	 * @return alunos.size().
 	 */

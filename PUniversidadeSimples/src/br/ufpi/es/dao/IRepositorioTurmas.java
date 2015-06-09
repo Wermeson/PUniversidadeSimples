@@ -17,7 +17,7 @@ public interface IRepositorioTurmas {
 	public void insereTurma(Turma turma);
 
 	/**
-	 * Dada a descrição da disciplina, retorna um turma.
+	 * Dada a descriï¿½ï¿½o da disciplina, retorna um turma.
 	 * 
 	 * @param descricao
 	 *            .
@@ -28,18 +28,18 @@ public interface IRepositorioTurmas {
 			throws TurmaNaoExistenteException;
 
 	/**
-	 * Checa se existe turma dada a descrição.
+	 * Checa se existe turma dada a descricao.
 	 * 
 	 * @param descricao
 	 *            .
-	 * @return true se existe, false se não existe.
+	 * @return true se existe, false se nao existe.
 	 */
 	public boolean verificaExistenciaTurma(String disciplina);
 
 	/**
-	 * Método que altera os dados de uma determinada turma. A opção do atributo
-	 * a ser alterado, a disciplina e a nova informação devem ser informados. As
-	 * opções são: 1 - Departamento. 2 - Disciplina 3 - Horário 4 - Quantidade
+	 * Metodo que altera os dados de uma determinada turma. A opcao do atributo
+	 * a ser alterado, a disciplina e a nova informacao devem ser informados. As
+	 * opcoes sao: 1 - Departamento. 2 - Disciplina 3 - Horario 4 - Quantidade
 	 * de alunos.
 	 * 
 	 * @param op
@@ -50,7 +50,7 @@ public interface IRepositorioTurmas {
 			throws TurmaNaoExistenteException;
 
 	/**
-	 * Dada a descrição da disciplina, remove a turma.
+	 * Dada a descriï¿½ï¿½o da disciplina, remove a turma.
 	 * 
 	 * @param disciplina
 	 *            .
@@ -68,7 +68,7 @@ public interface IRepositorioTurmas {
 	public List<Turma> listarTurmas() throws TurmasNaoCadastradasException;
 
 	/**
-	 * Quantidade de turmas no repositório
+	 * Quantidade de turmas no repositorio
 	 * 
 	 * @return quantidade.
 	 */

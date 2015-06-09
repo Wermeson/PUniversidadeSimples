@@ -36,7 +36,7 @@ public class TelaAluno {
 				Scanner s1 = new Scanner(System.in);
 				System.out.println("Informe o nome do aluno:");
 				String nome = s1.nextLine();
-				System.out.println("Informe a matrícula do aluno:");
+				System.out.println("Informe a matricula do aluno:");
 				String matricula = s.next();
 				System.out.println("Informe o curso do aluno:");
 				String curso = s.next();
@@ -110,7 +110,7 @@ public class TelaAluno {
 					System.out.println("1 - Alterar nome");
 					System.out.println("2 - Alterar matricula");
 					System.out.println("3 - Alterar Curso");
-					System.out.println("Digite a opção: ");
+					System.out.println("Digite a opcao: ");
 					System.out.println("===============================");
 					opcao = s.nextInt();
 
@@ -131,7 +131,7 @@ public class TelaAluno {
 						a2.setCurso(aux);
 						break;
 					default:
-						System.out.println("Opção invalida! Tente novamente!");
+						System.out.println("Opcao invalida! Tente novamente!");
 						flag = false;
 					}
 					if (flag == true) {
@@ -152,7 +152,7 @@ public class TelaAluno {
 				}
 				break;
 			default:
-				System.out.println("Opção inválida! Tente novamente!");
+				System.out.println("Opcao invalida! Tente novamente!");
 				break;
 			}
 		}

@@ -39,7 +39,7 @@ public class TelaProfessor {
 				String cpf = s1.nextLine();
 				System.out.println("Informe o nome do Professor:");
 				String nome = s.next();
-				System.out.println("Informe a lotação do Professor:");
+				System.out.println("Informe a lotacao do Professor:");
 				String lotacao = s.next();
 				System.out.println("Informe o titulo do Professor:");
 				String titulo = s.next();
@@ -59,7 +59,7 @@ public class TelaProfessor {
 						System.out
 								.println("-----------------------------------");
 						System.out.println("CPF:" + p2.getCpf() + "\nNome:"
-								+ p2.getNome() + "\nLotação:" + p2.getLotacao()
+								+ p2.getNome() + "\nLotacao:" + p2.getLotacao()
 								+ "\nTitulo:" + p2.getTitulo());
 						System.out
 								.println("-----------------------------------");
@@ -75,7 +75,7 @@ public class TelaProfessor {
 					Professor p3 = fachada.buscarProfessor(cpf2);
 					System.out.println("-----------------------------------");
 					System.out.println("CPF:" + p3.getCpf() + "\nNome:"
-							+ p3.getNome() + "\nLotação:" + p3.getLotacao()
+							+ p3.getNome() + "\nLotacao:" + p3.getLotacao()
 							+ "\nTitulo:" + p3.getTitulo());
 					System.out.println("-----------------------------------");
 				} catch (Exception e) {
@@ -103,7 +103,7 @@ public class TelaProfessor {
 				}
 				break;
 			default:
-				System.out.println("Opção inválida! Tente novamente!");
+				System.out.println("Opï¿½ï¿½o invï¿½lida! Tente novamente!");
 				break;
 			}
 		}

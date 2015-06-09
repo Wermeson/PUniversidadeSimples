@@ -31,14 +31,14 @@ public interface IRepositorioProfessores {
 	 * 
 	 * @param cpf
 	 *            .
-	 * @return true se existe, false se não existe.
+	 * @return true se existe, false se nï¿½o existe.
 	 */
 	public boolean verificaExistenciaProfessor(String cpf);
 
 	/**
-	 * Método que altera os dados de um determinado professor. A opção do
-	 * atributo a ser alterado, o cpf do professor e a nova informação devem ser
-	 * informados. As opções são: 1 - CPF 2 - Nome 3 - Titulo 4 - Lotcação
+	 * Metodo que altera os dados de um determinado professor. A opcao do
+	 * atributo a ser alterado, o cpf do professor e a nova informacao devem ser
+	 * informados. As opcoes sao: 1 - CPF 2 - Nome 3 - Titulo 4 - Lotacao
 	 * 
 	 * @param op
 	 *            , cp, info.

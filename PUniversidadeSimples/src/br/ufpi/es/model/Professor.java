@@ -22,7 +22,7 @@ public class Professor {
 	}
 
 	/*
-	 * Métodos de acesso aos atributos do objeto
+	 * Metodos de acesso aos atributos do objeto
 	 */
 	public String getCpf() {
 		return cpf;

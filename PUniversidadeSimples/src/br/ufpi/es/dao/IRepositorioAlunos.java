@@ -38,8 +38,8 @@ public interface IRepositorioAlunos {
 	public boolean verificaExistenciaAluno(String matricula) throws Exception;
 
 	/**
-	 * Altera um aluno. A opção do atributo a ser alterado, a matricula do aluno
-	 * e a nova inforção devem ser passadas para o método. As opções são: 1 -
+	 * Altera um aluno. A opcao do atributo a ser alterado, a matricula do aluno
+	 * e a nova informacao devem ser passadas para o metodo. As opcoes sao: 1 -
 	 * Matricula 2 - Nome 3 - Curso.
 	 * 
 	 * @param op
@@ -50,7 +50,7 @@ public interface IRepositorioAlunos {
 	public void alterarAluno(Aluno a) throws Exception;
 
 	/**
-	 * Dada a matrícula remove o aluno do curso
+	 * Dada a matricula remove o aluno do curso
 	 * 
 	 * @param matricula
 	 * @throws Exception

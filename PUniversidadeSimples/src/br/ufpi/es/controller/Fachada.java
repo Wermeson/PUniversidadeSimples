@@ -33,8 +33,8 @@ public class Fachada implements IFachada {
 	private IRepositorioTurmas repositorioTurmas;
 
 	/**
-	 * Construtor padrão da classe Fachada. Ao instanciar um objeto do tipo
-	 * Fachada, é definido um tipo de repositório para armazenar os dados.
+	 * Construtor padrao da classe Fachada. Ao instanciar um objeto do tipo
+	 * Fachada, e definido um tipo de repositorio para armazenar os dados.
 	 */
 	public Fachada() {
 		// this.repositorioListaAlunos = new RepositorioListaAlunos();
@@ -63,9 +63,9 @@ public class Fachada implements IFachada {
 	}
 
 	/**
-	 * Método altera os dados de um determinado aluno. A opção do atributo a ser
-	 * alterado, a matricula do aluno e a nova informação devem ser informados.
-	 * * As opções são: 1 - Matricula 2 - Nome 3 - Curso.
+	 * Metodo altera os dados de um determinado aluno. A opcao do atributo a ser
+	 * alterado, a matricula do aluno e a nova informacao devem ser informados.
+	 * * As opcoes sao: 1 - Matricula 2 - Nome 3 - Curso.
 	 * 
 	 * @param op
 	 *            , matricula, info.
@@ -94,7 +94,7 @@ public class Fachada implements IFachada {
 	}
 
 	/**
-	 * Método que busca uma determinado aluno pela matricula.
+	 * Metodo que busca uma determinado aluno pela matricula.
 	 * 
 	 * @param matricula
 	 *            .
@@ -109,7 +109,7 @@ public class Fachada implements IFachada {
 	}
 
 	/**
-	 * Método que lista todos os alunos cadastrados.
+	 * Metodo que lista todos os alunos cadastrados.
 	 * 
 	 * @return Lista de alunos.
 	 * @throws Exception
@@ -123,7 +123,7 @@ public class Fachada implements IFachada {
 	}
 
 	/**
-	 * retorna a quantidade alunos inseridos no repositório.
+	 * retorna a quantidade alunos inseridos no repositorio.
 	 * 
 	 * @throws SQLException
 	 */
@@ -156,13 +156,12 @@ public class Fachada implements IFachada {
 	}
 
 	/**
-	 * Método que altera os dados de um determinado professor. A opção do
-	 * atributo a ser alterado, o cpf do professor e a nova informação devem ser
-	 * passados para o método. * As opções são: 1 - CPF 2 - Nome 3 - Titulo 4 -
-	 * Lotação
+	 * Metodo que altera os dados de um determinado professor. A opcao do
+	 * atributo a ser alterado, o cpf do professor e a nova informacao devem ser
+	 * passados para o metodo. * As opcoes sao: 1 - CPF 2 - Nome 3 - Titulo 4 -
+	 * Lotacao
 	 * 
-	 * @param op
-	 *            , cpf, info.
+	 * @param op , cpf, info.
 	 */
 	public void alterarProfessor(int op, String cpf, String info)
 			throws ProfessorNaoExistenteException {
@@ -170,11 +169,11 @@ public class Fachada implements IFachada {
 	}
 
 	/**
-	 * Verifica se um determinado professor está presente no repositório.
+	 * Verifica se um determinado professor esta presente no repositorio.
 	 * 
 	 * @param cpf
 	 *            .
-	 * @return false, se não existe; true, caso exista.
+	 * @return false, se nao existe; true, caso exista.
 	 * @throws RepositorioException
 	 */
 	public boolean verificaExistenciaProfessor(String cpf) {
@@ -193,7 +192,7 @@ public class Fachada implements IFachada {
 	}
 
 	/**
-	 * Método que busca uma determinado professor pelo cpf.
+	 * Metodo que busca uma determinado professor pelo cpf.
 	 * 
 	 * @param cpf
 	 */
@@ -204,7 +203,7 @@ public class Fachada implements IFachada {
 	}
 
 	/**
-	 * Método que lista todos os professores cadastrados.
+	 * Metodo que lista todos os professores cadastrados.
 	 */
 	@Override
 	public List<Professor> listarProfessores()
@@ -247,7 +246,7 @@ public class Fachada implements IFachada {
 	}
 
 	/**
-	 * retorna a quantidade de professores inseridas no repositório
+	 * retorna a quantidade de professores inseridas no repositorio
 	 */
 	public int quantidadeProfessores() {
 		return this.meuControleProfessor.quantidadeProfessores();
@@ -267,9 +266,9 @@ public class Fachada implements IFachada {
 	}
 
 	/**
-	 * Método que altera os dados de uma determinada turma. A opção do atributo
-	 * a ser alterado, a disciplina e a nova informação devem ser informados. As
-	 * opções são: 1 - Departamento. 2 - Disciplina 3 - Horário 4 - Quantidade
+	 * Metodo que altera os dados de uma determinada turma. A opcao do atributo
+	 * a ser alterado, a disciplina e a nova informacao devem ser informados. As
+	 * opcoes sao: 1 - Departamento. 2 - Disciplina 3 - Horario 4 - Quantidade
 	 * de alunos.
 	 * 
 	 * @param op
@@ -283,7 +282,7 @@ public class Fachada implements IFachada {
 	}
 
 	/**
-	 * Dada a descrição da disciplina, retorna um turma.
+	 * Dada a descricao da disciplina, retorna um turma.
 	 * 
 	 * @param descricao
 	 *            .
@@ -297,7 +296,7 @@ public class Fachada implements IFachada {
 	}
 
 	/**
-	 * Dada a descrição da disciplina, remove a turma.
+	 * Dada a descricao da disciplina, remove a turma.
 	 * 
 	 * @param disciplina
 	 *            .
@@ -357,7 +356,7 @@ public class Fachada implements IFachada {
 	}
 
 	/**
-	 * Lista todos os alunos que estão em uma determinada turma.
+	 * Lista todos os alunos que estao em uma determinada turma.
 	 * 
 	 * @param turma
 	 *            .
@@ -370,7 +369,7 @@ public class Fachada implements IFachada {
 	}
 
 	/**
-	 * Retorna a quantidade de turmas existentes no repositório.
+	 * Retorna a quantidade de turmas existentes no repositorio.
 	 * 
 	 * @return quantidade.
 	 */
@@ -383,7 +382,7 @@ public class Fachada implements IFachada {
 	 * 
 	 * @param disciplina
 	 *            .
-	 * @return true se existe; false, se não existe.
+	 * @return true se existe; false, se nao existe.
 	 */
 	public boolean verificaExistenciaTurma(String disciplina) {
 		return this.meuControleTurmas.verificaSeTurmaExiste(disciplina);

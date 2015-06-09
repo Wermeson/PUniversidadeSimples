@@ -30,7 +30,7 @@ package br.ufpi.es.view;
 //					fachada.inserirAluno(a);
 //					break;
 //				case 2:
-//					JOptionPane.showMessageDialog(null, "Função será implementada em breve!");
+//					JOptionPane.showMessageDialog(null, "Funcao sera implementada em breve!");
 //					break;
 //				case 3:
 //					try{

@@ -20,7 +20,7 @@ public class RepositorioBancoAlunos implements IRepositorioAlunos {
 	}
 
 	/**
-	 * Método que insere um aluno no banco.
+	 * Metodo que insere um aluno no banco.
 	 * 
 	 * @param aluno
 	 *            .
@@ -42,7 +42,7 @@ public class RepositorioBancoAlunos implements IRepositorioAlunos {
 	}
 
 	/**
-	 * Método que busca um aluno no banco através de sua matrícula.
+	 * Metodo que busca um aluno no banco atraves de sua matricula.
 	 * 
 	 * @param matricula
 	 * @return aluno
@@ -74,12 +74,12 @@ public class RepositorioBancoAlunos implements IRepositorioAlunos {
 	}
 
 	/**
-	 * Método que verifica a existência de um aluno no banco através de sua
-	 * matrícula.
+	 * Metodo que verifica a existencia de um aluno no banco atraves de sua
+	 * matricula.
 	 * 
 	 * @param matricula
 	 * @return true se existir o aluno.
-	 * @return false se não existir.
+	 * @return false se nao existir.
 	 */
 	@Override
 	public boolean verificaExistenciaAluno(String matricula)
@@ -99,7 +99,7 @@ public class RepositorioBancoAlunos implements IRepositorioAlunos {
 
 	@Override
 	/**
-	 * Método que altera as informações de um aluno.
+	 * Metodo que altera as informacoes de um aluno.
 	 * @param aluno
 	 */
 	public void alterarAluno(Aluno a) throws SQLException {
@@ -130,7 +130,7 @@ public class RepositorioBancoAlunos implements IRepositorioAlunos {
 	}
 
 	/**
-	 * Método que remove um aluno do banco de dados.
+	 * Metodo que remove um aluno do banco de dados.
 	 * 
 	 * @param matricula
 	 */
@@ -153,7 +153,7 @@ public class RepositorioBancoAlunos implements IRepositorioAlunos {
 	}
 
 	/**
-	 * Método que retorna uma lista com todos os alunos cadastrados no banco.
+	 * Metodo que retorna uma lista com todos os alunos cadastrados no banco.
 	 * 
 	 * @return alunos
 	 */
@@ -185,7 +185,7 @@ public class RepositorioBancoAlunos implements IRepositorioAlunos {
 	}
 
 	/**
-	 * Método que retorna a quantidade de alunos cadastrados no banco.
+	 * Mwtodo que retorna a quantidade de alunos cadastrados no banco.
 	 * 
 	 * @return cont
 	 */

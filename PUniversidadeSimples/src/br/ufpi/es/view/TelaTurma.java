@@ -40,7 +40,7 @@ public class TelaTurma {
 				String departamento = s1.nextLine();
 				System.out.println("Informe o nome da disciplina:");
 				String disciplina = s.next();
-				System.out.println("Informe a carga horária");
+				System.out.println("Informe a carga horï¿½ria");
 				String cargaHoraria = s.next();
 				Turma t = new Turma(departamento, disciplina,
 						Integer.parseInt(cargaHoraria));
@@ -59,7 +59,7 @@ public class TelaTurma {
 								.println("-----------------------------------");
 						System.out.println("Departamento:"
 								+ t2.getDepartamento() + "\nDisciplina:"
-								+ t2.getDisciplina() + "\nCarga Horária:"
+								+ t2.getDisciplina() + "\nCarga Horaria:"
 								+ t2.getCargaHoraria());
 						System.out
 								.println("-----------------------------------");
@@ -80,7 +80,7 @@ public class TelaTurma {
 								.println("-----------------------------------");
 						System.out.println("Departamento:"
 								+ t2.getDepartamento() + "\nDisciplina:"
-								+ t2.getDisciplina() + "\nCarga Horária:"
+								+ t2.getDisciplina() + "\nCarga Horaria:"
 								+ t2.getCargaHoraria());
 						System.out
 								.println("-----------------------------------");
@@ -98,7 +98,7 @@ public class TelaTurma {
 					System.out.println("-----------------------------------");
 					System.out.println("Departamento:" + t3.getDepartamento()
 							+ "\nDisciplina:" + t3.getDisciplina()
-							+ "\nCarga Horária:" + t3.getCargaHoraria());
+							+ "\nCarga Horaria:" + t3.getCargaHoraria());
 					System.out.println("-----------------------------------");
 				} catch (Exception e) {
 					System.out.println(e.getMessage());
@@ -125,7 +125,7 @@ public class TelaTurma {
 				}
 				break;
 			default:
-				System.out.println("Opção inválida! Tente novamente!");
+				System.out.println("Opcao invalida! Tente novamente!");
 				break;
 			}
 		}

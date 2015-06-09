@@ -55,16 +55,16 @@ public class TurmasController {
 	 * 
 	 * @param disciplina
 	 *            .
-	 * @return true se existe; false, se não existe.
+	 * @return true se existe; false, se nï¿½o existe.
 	 */
 	public boolean verificaSeTurmaExiste(String disciplina) {
 		return this.controleTurmas.verificaExistenciaTurma(disciplina);
 	}
 
 	/**
-	 * Método que altera os dados de uma determinada turma. A opção do atributo
-	 * a ser alterado, a disciplina e a nova informação devem ser informados. As
-	 * opções são: 1 - Departamento. 2 - Disciplina 3 - Horário 4 - Quantidade
+	 * Metodo que altera os dados de uma determinada turma. A opcao do atributo
+	 * a ser alterado, a disciplina e a nova informacao devem ser informados. As
+	 * opcoes sao: 1 - Departamento. 2 - Disciplina 3 - Horario 4 - Quantidade
 	 * de alunos.
 	 * 
 	 * @param op
@@ -129,7 +129,7 @@ public class TurmasController {
 	}
 
 	/**
-	 * Lista todos os alunos que estão em uma determinada turma.
+	 * Lista todos os alunos que estao em uma determinada turma.
 	 * 
 	 * @param turma
 	 *            .
@@ -151,7 +151,7 @@ public class TurmasController {
 	}
 
 	/**
-	 * retorna a quantidade de turmas existentes no repositório.
+	 * retorna a quantidade de turmas existentes no repositorio.
 	 * 
 	 * @return quantidade.
 	 */
