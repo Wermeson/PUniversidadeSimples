@@ -6,7 +6,7 @@ import java.util.List;
 import br.ufpi.es.dao.IRepositorioAlunos;
 import br.ufpi.es.dao.IRepositorioProfessores;
 import br.ufpi.es.dao.IRepositorioTurmas;
-import br.ufpi.es.dao.RepositorioBancoAlunos;
+import br.ufpi.es.dao.RepositorioListaAlunos;
 import br.ufpi.es.dao.RepositorioListaProfessores;
 import br.ufpi.es.dao.RepositorioListaTurmas;
 import br.ufpi.es.model.Aluno;
@@ -38,7 +38,7 @@ public class Fachada implements IFachada {
 	 */
 	public Fachada() {
 		// this.repositorioListaAlunos = new RepositorioListaAlunos();
-		this.repositorioBancoAlunos = new RepositorioBancoAlunos();
+		this.repositorioBancoAlunos = new RepositorioListaAlunos();
 
 		this.repositorioProfessores = new RepositorioListaProfessores();
 		this.repositorioTurmas = new RepositorioListaTurmas();
