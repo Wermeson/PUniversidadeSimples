@@ -2,9 +2,10 @@ package br.ufpi.es.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertTrue;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
@@ -13,7 +14,6 @@ import br.ufpi.es.controller.Fachada;
 import br.ufpi.es.controller.IFachada;
 import br.ufpi.es.model.Aluno;
 import br.ufpi.es.system.exception.AlunoNaoExistenteException;
-import br.ufpi.es.system.exception.AlunosNaoCadastradosException;
 
 public class AlunosTest {
 
@@ -21,24 +21,23 @@ public class AlunosTest {
 	public void addAluno() throws SQLException {
 		IFachada fachada = new Fachada();
 		// Instancia de alunos
-		Aluno a1 = new Aluno("201100000", "Francisco Wermeson",
+		Aluno aluno1 = new Aluno("201100000", "Francisco Wermeson",
 				"Ciência da Computação");
-		Aluno a2 = new Aluno("201149100", "João", "Ciência da Computação");
-		Aluno a3 = new Aluno("201149101", "Pedro", "Matemática");
-		Aluno a4 = new Aluno("201149102", "Maria", "Matemática");
-		Aluno a5 = new Aluno("201149103", "José", "Ciência da Computação");
+		Aluno aluno2 = new Aluno("201149100", "João", "Ciência da Computação");
+		Aluno aluno3 = new Aluno("201149101", "Pedro", "Matemática");
+		Aluno aluno4 = new Aluno("201149102", "Maria", "Matemática");
+		Aluno aluno5 = new Aluno("201149103", "José", "Ciência da Computação");
 
 		// Salvando alunos no repositório
 		try {
-			fachada.inserirAluno(a1);
-			fachada.inserirAluno(a2);
-			fachada.inserirAluno(a3);
-			fachada.inserirAluno(a4);
-			fachada.inserirAluno(a5);
-			// testa a quantidade de alunos inseridos no repositório.
+			fachada.inserirAluno(aluno1);
+			fachada.inserirAluno(aluno2);
+			fachada.inserirAluno(aluno3);
+			fachada.inserirAluno(aluno4);
+			fachada.inserirAluno(aluno5);
 			assertEquals(5, fachada.quantidadeAlunos());
 		} catch (Exception e) {
-			e.printStackTrace();
+			assertTrue(false);
 		}
 	}
 
@@ -46,54 +45,47 @@ public class AlunosTest {
 	public void buscarAluno() throws Exception {
 		IFachada fachada = new Fachada();
 
-		Aluno aux1 = new Aluno("201100000", "Francisco Wermeson",
+		Aluno aluno1 = new Aluno("201100000", "Francisco Wermeson",
 				"Ciência da Computação");
-		Aluno aux2 = new Aluno("201149101", "Pedro", "Matemática");
+		Aluno aluno2 = new Aluno("201149101", "Pedro", "Matemática");
 
-		fachada.inserirAluno(aux1);
-		fachada.inserirAluno(aux2);
-		// Fazendo a busca
+		fachada.inserirAluno(aluno1);
+		fachada.inserirAluno(aluno2);
 		try {
-			aux1 = fachada.buscarAluno("201100000");
-			aux2 = fachada.buscarAluno("201149101");
+			aluno1 = fachada.buscarAluno("201100000");
+			aluno2 = fachada.buscarAluno("201149101");
+
+			assertNotNull(aluno1);
+			assertNotNull(aluno2);
+
+			assertEquals("201100000", aluno1.getMatricula()); // Matricula
+			assertEquals("Francisco Wermeson", aluno1.getNome());
+			assertEquals("Ciência da Computação", aluno1.getCurso());
+
+			assertEquals("201149101", aluno2.getMatricula());
+			assertEquals("Pedro", aluno2.getNome());
+			assertEquals("Matemática", aluno2.getCurso());
 		} catch (AlunoNaoExistenteException e) {
-			e.printStackTrace();
-			fail();
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+			assertTrue(false);
 		}
-
-		// Fazendo a verificação das informações.
-		assertNotNull(aux1);
-		assertNotNull(aux2);
-
-		assertEquals("201100000", aux1.getMatricula()); // Matricula
-		assertEquals("Francisco Wermeson", aux1.getNome());
-		assertEquals("Ciência da Computação", aux1.getCurso());
-
-		assertEquals("201149101", aux2.getMatricula());
-		assertEquals("Pedro", aux2.getNome());
-		assertEquals("Matemática", aux2.getCurso());
 	}
 
 	@Test
 	public void listaAlunos() throws Exception {
 		IFachada fachada = new Fachada();
-		List<Aluno> lista = null;
-		Aluno aux1 = new Aluno("201100000", "Francisco Wermeson",
+		List<Aluno> listaAlunos = new ArrayList<Aluno>();
+		Aluno aluno1 = new Aluno("201100000", "Francisco Wermeson",
 				"Ciência da Computação");
-		Aluno aux2 = new Aluno("201149101", "Pedro", "Matemática");
+		Aluno aluno2 = new Aluno("201149101", "Pedro", "Matemática");
 
-		fachada.inserirAluno(aux1);
-		fachada.inserirAluno(aux2);
+		fachada.inserirAluno(aluno1);
+		fachada.inserirAluno(aluno2);
 
-		try {
-			lista = fachada.listarAlunos();
-		} catch (AlunosNaoCadastradosException e) {
-			e.printStackTrace();
-		}
+		listaAlunos.add(aluno1);
+		listaAlunos.add(aluno2);
 
-		// testa as informações retornada.
-		assertEquals(2, lista.size());
+		assertEquals(listaAlunos, fachada.listarAlunos());
+		assertEquals(2, listaAlunos.size());
+
 	}
 }
