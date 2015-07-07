@@ -117,7 +117,7 @@ public class TelaMenuTurma extends JDialog {
 		botaoQtdAlunos.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaQtdAlunos(fachada);
+				new TelaQtdTurma(fachada);
 			}
 		});
 
