@@ -98,7 +98,7 @@ public class TelaMenuTurma extends JDialog {
 		botaoRemover.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaRemoverAluno(fachada); // Exibe a tela Remover Aluno
+				new TelaRemoverTurma(fachada); // Exibe a tela Remover Aluno
 			}
 		});
 
