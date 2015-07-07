@@ -78,7 +78,7 @@ public class TelaMenuTurma extends JDialog {
 		botaoListar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new TelaListarAlunos(fachada); // Exibe a tela Listar Alunos
+				new TelaListarTurmas(fachada); // Exibe a tela Listar Alunos
 			}
 		});
 
